@@ -74,6 +74,12 @@
   <ItemGroup>
     <Compile Include="ErrorLogger.vb" />
     <Compile Include="EventLogger.vb" />
+    <Compile Include="FormAuctionQueries.Designer.vb">
+      <DependentUpon>FormAuctionQueries.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAuctionQueries.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormCustomers.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,18 @@
       <DependentUpon>FormArtworxParent.vb</DependentUpon>
     </Compile>
     <Compile Include="FormArtworxParent.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormItems.Designer.vb">
+      <DependentUpon>FormItems.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormItems.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProcessBid.Designer.vb">
+      <DependentUpon>FormProcessBid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormProcessBid.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="IMDIChild.vb" />
@@ -110,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCustomers.resx">
       <DependentUpon>FormCustomers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProcessBid.resx">
+      <DependentUpon>FormProcessBid.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
