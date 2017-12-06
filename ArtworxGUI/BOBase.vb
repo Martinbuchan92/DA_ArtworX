@@ -1,4 +1,5 @@
 ﻿Imports ArtworxDAC
+Imports System.Data.SqlClient
 
 Public Class BOBase
     

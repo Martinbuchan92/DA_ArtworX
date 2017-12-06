@@ -5,5 +5,11 @@
     <Setting Name="ConnectionString" Type="System.String" Scope="User">
       <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="E:\Semester 2\DD_Data Driven Apps\Assessment\artworx.mdf";Integrated Security=True;Connect Timeout=30</Value>
     </Setting>
+    <Setting Name="FormSize" Type="System.Drawing.Size" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FormLocation" Type="System.Drawing.Size" Scope="Application">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -85,4 +85,9 @@ Public Class FormArtworxParent
 
     Private m_ChildFormNumber As Integer
 
+    Private Sub CustomerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CustomerToolStripMenuItem.Click
+        Dim f As New FormCustomers
+        f.MdiParent = Me
+        f.Show()
+    End Sub
 End Class

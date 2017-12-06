@@ -13,45 +13,249 @@ Option Explicit On
 
 
 Namespace My
-
-    <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(), _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0"), _
-     Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+    
+    <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.3.0.0"),  _
+     Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
-
-        Private Shared defaultInstance As MySettings = CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New MySettings), MySettings)
-
+        
+        Private Shared defaultInstance As MySettings = CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New MySettings()),MySettings)
+        
 #Region "My.Settings Auto-Save Functionality"
 #If _MyType = "WindowsForms" Then
-        Private Shared addedHandler As Boolean
+    Private Shared addedHandler As Boolean
 
-        Private Shared addedHandlerLockObject As New Object
+    Private Shared addedHandlerLockObject As New Object
 
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-        Private Shared Sub AutoSaveSettings(ByVal sender As Global.System.Object, ByVal e As Global.System.EventArgs)
-            If My.Application.SaveMySettingsOnExit Then
-                My.Settings.Save()
-            End If
-        End Sub
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+    Private Shared Sub AutoSaveSettings(sender As Global.System.Object, e As Global.System.EventArgs)
+        If My.Application.SaveMySettingsOnExit Then
+            My.Settings.Save()
+        End If
+    End Sub
 #End If
 #End Region
-
+        
         Public Shared ReadOnly Property [Default]() As MySettings
             Get
-
+                
 #If _MyType = "WindowsForms" Then
-                   If Not addedHandler Then
-                        SyncLock addedHandlerLockObject
-                            If Not addedHandler Then
-                                AddHandler My.Application.Shutdown, AddressOf AutoSaveSettings
-                                addedHandler = True
-                            End If
-                        End SyncLock
-                    End If
+               If Not addedHandler Then
+                    SyncLock addedHandlerLockObject
+                        If Not addedHandler Then
+                            AddHandler My.Application.Shutdown, AddressOf AutoSaveSettings
+                            addedHandler = True
+                        End If
+                    End SyncLock
+                End If
 #End If
                 Return defaultInstance
             End Get
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("test")>  _
+        Public Property Setting() As String
+            Get
+                Return CType(Me("Setting"),String)
+            End Get
+            Set
+                Me("Setting") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_CategorySave")>  _
+        Public Property SP_CategorySave() As String
+            Get
+                Return CType(Me("SP_CategorySave"),String)
+            End Get
+            Set
+                Me("SP_CategorySave") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_ItemSave")>  _
+        Public Property SP_ItemSave() As String
+            Get
+                Return CType(Me("SP_ItemSave"),String)
+            End Get
+            Set
+                Me("SP_ItemSave") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_CustomerSave")>  _
+        Public Property SP_CustomerSave() As String
+            Get
+                Return CType(Me("SP_CustomerSave"),String)
+            End Get
+            Set
+                Me("SP_CustomerSave") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_BidSave")>  _
+        Public Property SP_BidSave() As String
+            Get
+                Return CType(Me("SP_BidSave"),String)
+            End Get
+            Set
+                Me("SP_BidSave") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_CategoryGetByID")>  _
+        Public Property SP_CategoryGetByID() As String
+            Get
+                Return CType(Me("SP_CategoryGetByID"),String)
+            End Get
+            Set
+                Me("SP_CategoryGetByID") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_ItemGetByID")>  _
+        Public Property SP_ItemGetByID() As String
+            Get
+                Return CType(Me("SP_ItemGetByID"),String)
+            End Get
+            Set
+                Me("SP_ItemGetByID") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_CustomerGetByID")>  _
+        Public Property SP_CustomerGetByID() As String
+            Get
+                Return CType(Me("SP_CustomerGetByID"),String)
+            End Get
+            Set
+                Me("SP_CustomerGetByID") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_BidGetByID")>  _
+        Public Property SP_BidGetById() As String
+            Get
+                Return CType(Me("SP_BidGetById"),String)
+            End Get
+            Set
+                Me("SP_BidGetById") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_CategoryList")>  _
+        Public Property SP_CategoryList() As String
+            Get
+                Return CType(Me("SP_CategoryList"),String)
+            End Get
+            Set
+                Me("SP_CategoryList") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_ItemList")>  _
+        Public Property SP_ItemList() As String
+            Get
+                Return CType(Me("SP_ItemList"),String)
+            End Get
+            Set
+                Me("SP_ItemList") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_CustomerList")>  _
+        Public Property SP_CustomerList() As String
+            Get
+                Return CType(Me("SP_CustomerList"),String)
+            End Get
+            Set
+                Me("SP_CustomerList") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_BidList")>  _
+        Public Property SP_BidList() As String
+            Get
+                Return CType(Me("SP_BidList"),String)
+            End Get
+            Set
+                Me("SP_BidList") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_CategoryNames")>  _
+        Public Property SP_CategoryNames() As String
+            Get
+                Return CType(Me("SP_CategoryNames"),String)
+            End Get
+            Set
+                Me("SP_CategoryNames") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_ItemNames")>  _
+        Public Property SP_ItemNames() As String
+            Get
+                Return CType(Me("SP_ItemNames"),String)
+            End Get
+            Set
+                Me("SP_ItemNames") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_CustomerNames")>  _
+        Public Property SP_CustomerNames() As String
+            Get
+                Return CType(Me("SP_CustomerNames"),String)
+            End Get
+            Set
+                Me("SP_CustomerNames") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("usp_BidGetWinnerForItem")>  _
+        Public Property SP_BidGetWinnerForItem() As String
+            Get
+                Return CType(Me("SP_BidGetWinnerForItem"),String)
+            End Get
+            Set
+                Me("SP_BidGetWinnerForItem") = value
+            End Set
         End Property
     End Class
 End Namespace
@@ -64,9 +268,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.ArtworxGUI.My.MySettings
+        Friend ReadOnly Property Settings() As Global.ArtworxBOC.My.MySettings
             Get
-                Return Global.ArtworxGUI.My.MySettings.Default
+                Return Global.ArtworxBOC.My.MySettings.Default
             End Get
         End Property
     End Module

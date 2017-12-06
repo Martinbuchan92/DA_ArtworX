@@ -72,12 +72,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseGUI.vb" />
-    <Compile Include="Form1.vb">
+    <Compile Include="ErrorLogger.vb" />
+    <Compile Include="EventLogger.vb" />
+    <Compile Include="FormCustomers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="FormCustomers.Designer.vb">
+      <DependentUpon>FormCustomers.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormArtworxParent.Designer.vb">
@@ -86,6 +87,7 @@
     <Compile Include="FormArtworxParent.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="IMDIChild.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -106,6 +108,9 @@
     <EmbeddedResource Include="FormArtworxParent.resx">
       <DependentUpon>FormArtworxParent.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCustomers.resx">
+      <DependentUpon>FormCustomers.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -118,6 +123,12 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\ArtworxGUI.Bid.datasource" />
+    <None Include="My Project\DataSources\ArtworxGUI.BOBase+EntityStateEnum.datasource" />
+    <None Include="My Project\DataSources\ArtworxGUI.BOBase.datasource" />
+    <None Include="My Project\DataSources\ArtworxGUI.Category.datasource" />
+    <None Include="My Project\DataSources\ArtworxGUI.Customer.datasource" />
+    <None Include="My Project\DataSources\ArtworxGUI.Item.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>

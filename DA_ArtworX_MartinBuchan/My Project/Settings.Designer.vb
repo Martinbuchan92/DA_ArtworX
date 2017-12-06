@@ -66,6 +66,23 @@ Namespace My
                 Me("ConnectionString") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property FormSize() As Global.System.Drawing.Size
+            Get
+                Return CType(Me("FormSize"),Global.System.Drawing.Size)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0, 0")>  _
+        Public ReadOnly Property FormLocation() As Global.System.Drawing.Size
+            Get
+                Return CType(Me("FormLocation"),Global.System.Drawing.Size)
+            End Get
+        End Property
     End Class
 End Namespace
 
