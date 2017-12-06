@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DA_ArtworX_MartinBuchan", "DA_ArtworX_MartinBuchan\DA_ArtworX_MartinBuchan.vbproj", "{C461F933-57D6-4D88-8AB3-AD8E434BD6C6}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ArtworxGUI", "DA_ArtworX_MartinBuchan\ArtworxGUI.vbproj", "{C461F933-57D6-4D88-8AB3-AD8E434BD6C6}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ArtworxBOC", "ArtworxGUI\ArtworxBOC.vbproj", "{8FA9F843-9873-40CD-9914-E99C2223353A}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ArtworxDAC", "ArtworxDAC\ArtworxDAC.vbproj", "{061A35AD-B637-483A-9406-5277A20F3FB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{C461F933-57D6-4D88-8AB3-AD8E434BD6C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C461F933-57D6-4D88-8AB3-AD8E434BD6C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C461F933-57D6-4D88-8AB3-AD8E434BD6C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FA9F843-9873-40CD-9914-E99C2223353A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FA9F843-9873-40CD-9914-E99C2223353A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FA9F843-9873-40CD-9914-E99C2223353A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FA9F843-9873-40CD-9914-E99C2223353A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{061A35AD-B637-483A-9406-5277A20F3FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{061A35AD-B637-483A-9406-5277A20F3FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{061A35AD-B637-483A-9406-5277A20F3FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{061A35AD-B637-483A-9406-5277A20F3FB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
