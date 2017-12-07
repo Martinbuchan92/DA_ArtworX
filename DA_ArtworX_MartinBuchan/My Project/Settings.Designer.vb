@@ -56,8 +56,9 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""E:\Semester 2\DD_Data Driven"& _ 
-            " Apps\Assessment\artworx.mdf"";Integrated Security=True;Connect Timeout=30")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\intro\Documents\Vis"& _ 
+            "ual Studio 2017\Projects\DA_ArtworX\ArtworxDAC\artworx.mdf"";Integrated Security="& _ 
+            "True;Connect Timeout=30")>  _
         Public Property ConnectionString() As String
             Get
                 Return CType(Me("ConnectionString"),String)

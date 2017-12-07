@@ -11492,7 +11492,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11890,7 +11890,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12347,7 +12347,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13039,7 +13039,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13522,7 +13522,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13730,7 +13730,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13922,7 +13922,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -14096,7 +14096,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -14362,7 +14362,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -14551,7 +14551,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -14726,7 +14726,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -14900,7 +14900,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -15142,7 +15142,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -15340,7 +15340,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -15516,7 +15516,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -15690,7 +15690,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -16027,7 +16027,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -16221,7 +16221,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -16397,7 +16397,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -16571,7 +16571,7 @@ Namespace artworxDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.artworxConnectionString
+            Me._connection.ConnectionString = Global.ArtworxDAC.My.MySettings.Default.connstring
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
