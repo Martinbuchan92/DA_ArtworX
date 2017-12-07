@@ -114,4 +114,29 @@ Public Class FormCustomers
         Me.txtAccountNumber.Text = c.Item(index).accountNumber
         Me.txtSwiftCode.Text = c.Item(index).swiftCode
     End Sub
+
+    Private Sub btnFirst_Click(sender As Object, e As EventArgs) Handles btnFirst.Click
+        index = 0
+        DisplayListData()
+    End Sub
+
+    Private Sub btnPrevious_Click(sender As Object, e As EventArgs) Handles btnPrevious.Click
+        If index > 0 Then
+            index = index - 1
+            DisplayListData()
+
+        End If
+    End Sub
+
+    Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
+        If index < limit Then
+            index = index + 1
+            DisplayListData()
+        End If
+    End Sub
+
+    Private Sub btnLast_Click(sender As Object, e As EventArgs) Handles btnLast.Click
+        index = limit
+        DisplayListData()
+    End Sub
 End Class

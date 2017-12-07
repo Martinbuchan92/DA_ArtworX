@@ -6,8 +6,8 @@
     Dim _name As String
     Dim _description As String
     Dim _artist As String
-    Dim _startPrice As Decimal
-    Dim _soldPrice As Decimal
+    Dim _startPrice As Nullable(Of Decimal)
+    Dim _soldPrice As Nullable(Of Decimal)
     Dim _soldToID As String
 
 #Region "Constants"
@@ -72,9 +72,9 @@
                 i.name = .Item(CN_name.ToString)
                 i.description = .Item(CN_description.ToString)
                 i.artist = .Item(CN_artist.ToString)
-                i.startPrice = .Item(CN_startPrice.ToString)
-                i.soldPrice = .Item(CN_soldPrice.ToString)
-                i.soldToID = .Item(CN_soldToID.ToString)
+                'i.startPrice = .Item(CN_startPrice.ToString)
+                'i.soldPrice = .Item(CN_soldPrice.ToString)
+                'i.soldToID = .Item(CN_soldToID.ToString)
             End With
             il.Add(i)
         Next
@@ -165,7 +165,10 @@
 
     Public Property startPrice() As Decimal
         Get
-            Return Decimal.Round(_startPrice, 2)
+            If _startPrice.HasValue Then
+                Return Decimal.Round(_startPrice.Value, 2)
+            End If
+            Return 0.00
         End Get
         Set(ByVal value As Decimal)
             If _startPrice <> value Then
@@ -177,7 +180,10 @@
 
     Public Property soldPrice() As Decimal
         Get
-            Return Decimal.Round(_soldPrice, 2)
+            If _startPrice.HasValue Then
+                Return Decimal.Round(_soldPrice.Value, 2)
+            End If
+            Return 0.00
         End Get
         Set(ByVal value As Decimal)
             If _soldPrice <> value Then

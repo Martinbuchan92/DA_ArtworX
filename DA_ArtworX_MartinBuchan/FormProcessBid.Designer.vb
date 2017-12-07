@@ -23,36 +23,36 @@ Partial Class FormProcessBid
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.lblCreditStatus = New System.Windows.Forms.Label()
-        Me.lblHighestBid = New System.Windows.Forms.Label()
-        Me.cmbSelectCustomer = New System.Windows.Forms.ComboBox()
         Me.cmbSelectItem = New System.Windows.Forms.ComboBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.cmbSelectCustomer = New System.Windows.Forms.ComboBox()
+        Me.lblHighestBid = New System.Windows.Forms.Label()
+        Me.lblCreditStatus = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtAmount = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.txtName = New System.Windows.Forms.TextBox()
-        Me.txtDescription = New System.Windows.Forms.TextBox()
-        Me.txtCategory = New System.Windows.Forms.TextBox()
-        Me.txtArtist = New System.Windows.Forms.TextBox()
-        Me.txtStartPrice = New System.Windows.Forms.TextBox()
-        Me.txtSoldPrice = New System.Windows.Forms.TextBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.txtSoldTo = New System.Windows.Forms.TextBox()
+        Me.txtSoldPrice = New System.Windows.Forms.TextBox()
+        Me.txtStartPrice = New System.Windows.Forms.TextBox()
+        Me.txtArtist = New System.Windows.Forms.TextBox()
+        Me.txtCategory = New System.Windows.Forms.TextBox()
+        Me.txtDescription = New System.Windows.Forms.TextBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnAcceptBid = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
@@ -79,6 +79,76 @@ Partial Class FormProcessBid
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Inputs..."
         '
+        'cmbSelectItem
+        '
+        Me.cmbSelectItem.FormattingEnabled = True
+        Me.cmbSelectItem.Location = New System.Drawing.Point(111, 64)
+        Me.cmbSelectItem.Name = "cmbSelectItem"
+        Me.cmbSelectItem.Size = New System.Drawing.Size(121, 21)
+        Me.cmbSelectItem.TabIndex = 7
+        '
+        'cmbSelectCustomer
+        '
+        Me.cmbSelectCustomer.FormattingEnabled = True
+        Me.cmbSelectCustomer.Location = New System.Drawing.Point(111, 26)
+        Me.cmbSelectCustomer.Name = "cmbSelectCustomer"
+        Me.cmbSelectCustomer.Size = New System.Drawing.Size(121, 21)
+        Me.cmbSelectCustomer.TabIndex = 6
+        '
+        'lblHighestBid
+        '
+        Me.lblHighestBid.AutoSize = True
+        Me.lblHighestBid.Location = New System.Drawing.Point(331, 67)
+        Me.lblHighestBid.Name = "lblHighestBid"
+        Me.lblHighestBid.Size = New System.Drawing.Size(31, 13)
+        Me.lblHighestBid.TabIndex = 5
+        Me.lblHighestBid.Text = "$------"
+        '
+        'lblCreditStatus
+        '
+        Me.lblCreditStatus.AutoSize = True
+        Me.lblCreditStatus.Location = New System.Drawing.Point(331, 29)
+        Me.lblCreditStatus.Name = "lblCreditStatus"
+        Me.lblCreditStatus.Size = New System.Drawing.Size(56, 13)
+        Me.lblCreditStatus.TabIndex = 4
+        Me.lblCreditStatus.Text = "PENDING"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(241, 67)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(64, 13)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Highest Bid:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(238, 29)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(70, 13)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Credit Status:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(22, 67)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(60, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Select Item"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(22, 29)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(84, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Select Customer"
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.txtAmount)
@@ -91,6 +161,39 @@ Partial Class FormProcessBid
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Enter Bid..."
+        '
+        'txtAmount
+        '
+        Me.txtAmount.Location = New System.Drawing.Point(111, 25)
+        Me.txtAmount.Name = "txtAmount"
+        Me.txtAmount.Size = New System.Drawing.Size(121, 20)
+        Me.txtAmount.TabIndex = 3
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(111, 55)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(121, 20)
+        Me.DateTimePicker1.TabIndex = 2
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(22, 61)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(30, 13)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Date"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(22, 28)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(43, 13)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Amount"
         '
         'GroupBox3
         '
@@ -115,187 +218,54 @@ Partial Class FormProcessBid
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Item Details..."
         '
-        'GroupBox4
+        'txtSoldTo
         '
-        Me.GroupBox4.Controls.Add(Me.DataGridView1)
-        Me.GroupBox4.Location = New System.Drawing.Point(466, 12)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(241, 366)
-        Me.GroupBox4.TabIndex = 1
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Current Bids..."
+        Me.txtSoldTo.Location = New System.Drawing.Point(111, 171)
+        Me.txtSoldTo.Name = "txtSoldTo"
+        Me.txtSoldTo.Size = New System.Drawing.Size(276, 20)
+        Me.txtSoldTo.TabIndex = 13
         '
-        'Label1
+        'txtSoldPrice
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(22, 29)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(84, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Select Customer"
+        Me.txtSoldPrice.Location = New System.Drawing.Point(111, 148)
+        Me.txtSoldPrice.Name = "txtSoldPrice"
+        Me.txtSoldPrice.Size = New System.Drawing.Size(121, 20)
+        Me.txtSoldPrice.TabIndex = 12
         '
-        'Label2
+        'txtStartPrice
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(22, 67)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(60, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Select Item"
+        Me.txtStartPrice.Location = New System.Drawing.Point(111, 125)
+        Me.txtStartPrice.Name = "txtStartPrice"
+        Me.txtStartPrice.Size = New System.Drawing.Size(121, 20)
+        Me.txtStartPrice.TabIndex = 11
         '
-        'Label3
+        'txtArtist
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(238, 29)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(70, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Credit Status:"
+        Me.txtArtist.Location = New System.Drawing.Point(111, 102)
+        Me.txtArtist.Name = "txtArtist"
+        Me.txtArtist.Size = New System.Drawing.Size(276, 20)
+        Me.txtArtist.TabIndex = 10
         '
-        'Label4
+        'txtCategory
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(241, 67)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(64, 13)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Highest Bid:"
+        Me.txtCategory.Location = New System.Drawing.Point(111, 79)
+        Me.txtCategory.Name = "txtCategory"
+        Me.txtCategory.Size = New System.Drawing.Size(276, 20)
+        Me.txtCategory.TabIndex = 9
         '
-        'lblCreditStatus
+        'txtDescription
         '
-        Me.lblCreditStatus.AutoSize = True
-        Me.lblCreditStatus.Location = New System.Drawing.Point(331, 29)
-        Me.lblCreditStatus.Name = "lblCreditStatus"
-        Me.lblCreditStatus.Size = New System.Drawing.Size(56, 13)
-        Me.lblCreditStatus.TabIndex = 4
-        Me.lblCreditStatus.Text = "PENDING"
+        Me.txtDescription.Location = New System.Drawing.Point(111, 56)
+        Me.txtDescription.Name = "txtDescription"
+        Me.txtDescription.Size = New System.Drawing.Size(276, 20)
+        Me.txtDescription.TabIndex = 8
         '
-        'lblHighestBid
+        'txtName
         '
-        Me.lblHighestBid.AutoSize = True
-        Me.lblHighestBid.Location = New System.Drawing.Point(331, 67)
-        Me.lblHighestBid.Name = "lblHighestBid"
-        Me.lblHighestBid.Size = New System.Drawing.Size(31, 13)
-        Me.lblHighestBid.TabIndex = 5
-        Me.lblHighestBid.Text = "$------"
-        '
-        'cmbSelectCustomer
-        '
-        Me.cmbSelectCustomer.FormattingEnabled = True
-        Me.cmbSelectCustomer.Location = New System.Drawing.Point(111, 26)
-        Me.cmbSelectCustomer.Name = "cmbSelectCustomer"
-        Me.cmbSelectCustomer.Size = New System.Drawing.Size(121, 21)
-        Me.cmbSelectCustomer.TabIndex = 6
-        '
-        'cmbSelectItem
-        '
-        Me.cmbSelectItem.FormattingEnabled = True
-        Me.cmbSelectItem.Location = New System.Drawing.Point(111, 64)
-        Me.cmbSelectItem.Name = "cmbSelectItem"
-        Me.cmbSelectItem.Size = New System.Drawing.Size(121, 21)
-        Me.cmbSelectItem.TabIndex = 7
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(235, 347)
-        Me.DataGridView1.TabIndex = 0
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(22, 28)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(43, 13)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Amount"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(22, 61)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(30, 13)
-        Me.Label6.TabIndex = 1
-        Me.Label6.Text = "Date"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(111, 55)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(121, 20)
-        Me.DateTimePicker1.TabIndex = 2
-        '
-        'txtAmount
-        '
-        Me.txtAmount.Location = New System.Drawing.Point(111, 25)
-        Me.txtAmount.Name = "txtAmount"
-        Me.txtAmount.Size = New System.Drawing.Size(121, 20)
-        Me.txtAmount.TabIndex = 3
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(22, 36)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(3, 0, 3, 10)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(35, 13)
-        Me.Label7.TabIndex = 0
-        Me.Label7.Text = "Name"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(22, 59)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(3, 0, 3, 10)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(60, 13)
-        Me.Label8.TabIndex = 1
-        Me.Label8.Text = "Description"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(22, 82)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(3, 0, 3, 10)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(49, 13)
-        Me.Label9.TabIndex = 2
-        Me.Label9.Text = "Category"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(22, 105)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(3, 0, 3, 10)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(30, 13)
-        Me.Label10.TabIndex = 3
-        Me.Label10.Text = "Artist"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(21, 128)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(3, 0, 3, 10)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(56, 13)
-        Me.Label11.TabIndex = 4
-        Me.Label11.Text = "Start Price"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(22, 151)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(3, 0, 3, 10)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(55, 13)
-        Me.Label12.TabIndex = 5
-        Me.Label12.Text = "Sold Price"
+        Me.txtName.Location = New System.Drawing.Point(111, 33)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(276, 20)
+        Me.txtName.TabIndex = 7
         '
         'Label13
         '
@@ -307,54 +277,84 @@ Partial Class FormProcessBid
         Me.Label13.TabIndex = 6
         Me.Label13.Text = "Sold To"
         '
-        'txtName
+        'Label12
         '
-        Me.txtName.Location = New System.Drawing.Point(111, 33)
-        Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(276, 20)
-        Me.txtName.TabIndex = 7
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(22, 151)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(3, 0, 3, 10)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(55, 13)
+        Me.Label12.TabIndex = 5
+        Me.Label12.Text = "Sold Price"
         '
-        'txtDescription
+        'Label11
         '
-        Me.txtDescription.Location = New System.Drawing.Point(111, 56)
-        Me.txtDescription.Name = "txtDescription"
-        Me.txtDescription.Size = New System.Drawing.Size(276, 20)
-        Me.txtDescription.TabIndex = 8
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(21, 128)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(3, 0, 3, 10)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(56, 13)
+        Me.Label11.TabIndex = 4
+        Me.Label11.Text = "Start Price"
         '
-        'txtCategory
+        'Label10
         '
-        Me.txtCategory.Location = New System.Drawing.Point(111, 79)
-        Me.txtCategory.Name = "txtCategory"
-        Me.txtCategory.Size = New System.Drawing.Size(276, 20)
-        Me.txtCategory.TabIndex = 9
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(22, 105)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(3, 0, 3, 10)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(30, 13)
+        Me.Label10.TabIndex = 3
+        Me.Label10.Text = "Artist"
         '
-        'txtArtist
+        'Label9
         '
-        Me.txtArtist.Location = New System.Drawing.Point(111, 102)
-        Me.txtArtist.Name = "txtArtist"
-        Me.txtArtist.Size = New System.Drawing.Size(276, 20)
-        Me.txtArtist.TabIndex = 10
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(22, 82)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(3, 0, 3, 10)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(49, 13)
+        Me.Label9.TabIndex = 2
+        Me.Label9.Text = "Category"
         '
-        'txtStartPrice
+        'Label8
         '
-        Me.txtStartPrice.Location = New System.Drawing.Point(111, 125)
-        Me.txtStartPrice.Name = "txtStartPrice"
-        Me.txtStartPrice.Size = New System.Drawing.Size(121, 20)
-        Me.txtStartPrice.TabIndex = 11
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(22, 59)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(3, 0, 3, 10)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(60, 13)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "Description"
         '
-        'txtSoldPrice
+        'Label7
         '
-        Me.txtSoldPrice.Location = New System.Drawing.Point(111, 148)
-        Me.txtSoldPrice.Name = "txtSoldPrice"
-        Me.txtSoldPrice.Size = New System.Drawing.Size(121, 20)
-        Me.txtSoldPrice.TabIndex = 12
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(22, 36)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(3, 0, 3, 10)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(35, 13)
+        Me.Label7.TabIndex = 0
+        Me.Label7.Text = "Name"
         '
-        'txtSoldTo
+        'GroupBox4
         '
-        Me.txtSoldTo.Location = New System.Drawing.Point(111, 171)
-        Me.txtSoldTo.Name = "txtSoldTo"
-        Me.txtSoldTo.Size = New System.Drawing.Size(276, 20)
-        Me.txtSoldTo.TabIndex = 13
+        Me.GroupBox4.Controls.Add(Me.DataGridView1)
+        Me.GroupBox4.Location = New System.Drawing.Point(466, 12)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(241, 366)
+        Me.GroupBox4.TabIndex = 1
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Current Bids..."
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(235, 347)
+        Me.DataGridView1.TabIndex = 0
         '
         'btnAcceptBid
         '
