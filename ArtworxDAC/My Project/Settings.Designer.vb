@@ -56,9 +56,8 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\martin.buchan\Source"& _ 
-            "\Repos\DA_ArtworX\ArtworxDAC\bin\Debug\artworx.mdf;Integrated Security=True;Conn"& _ 
-            "ect Timeout=30")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|artworx.mdf;In"& _ 
+            "tegrated Security=True;Connect Timeout=30")>  _
         Public ReadOnly Property ConnectionString() As String
             Get
                 Return CType(Me("ConnectionString"),String)
