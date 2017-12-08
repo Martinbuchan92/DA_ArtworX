@@ -47,8 +47,7 @@ Public Class FormCustomerItemMasterDetail
     Private Sub FormCustomerItemMasterDetail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CustomerBindingSource.DataSource = ArtworxBOC.Customer.Create()
         Dim customerID As String
-        customerID = Me.CustomerIDTextBox.Text.ToString()
-        'Me.ItemBindingSource.DataSource = ArtworxBOC.Bid
-
+        customerID = Me.CustomerIDTextBox.Text
+        Me.ItemBindingSource.DataSource = ArtworxBOC.Item.GetItemsByCustomer(customerID)
     End Sub
 End Class

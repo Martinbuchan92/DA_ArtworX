@@ -72,9 +72,9 @@
                 i.name = .Item(CN_name.ToString)
                 i.description = .Item(CN_description.ToString)
                 i.artist = .Item(CN_artist.ToString)
-                i.startPrice = .Item(CN_startPrice.ToString)
-                i.soldPrice = .Item(CN_soldPrice.ToString)
-                i.soldToID = .Item(CN_soldToID.ToString)
+                'i.startPrice = .Item(CN_startPrice.ToString)
+                'i.soldPrice = .Item(CN_soldPrice.ToString)
+                'i.soldToID = .Item(CN_soldToID.ToString)
             End With
             il.Add(i)
         Next
@@ -101,28 +101,19 @@
         Return success
     End Function
 
-    Public Function GetItemsByCustomer(ByVal customerID As String) As List(Of Item)
-        Dim il As List(Of Item)
-        Dim dt As New DataTable
+    Public Shared Function GetItemsByCustomer(ByVal customerID As String) As List(Of Item)
+        Dim il As List(Of Item) = New List(Of Item)
+        Dim bt As List(Of Bid) = New List(Of Bid)
+        bt = Bid.Create()
         Dim i As Item
-        Dim n As Integer
 
-        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_ItemList)
-        il = New List(Of Item)
-        For n = 0 To dt.Rows.Count - 1
-            i = New Item()
-            With dt.Rows(n)
-                i.itemID = .Item(CN_itemID.ToString)
-                i.categoryID = .Item(CN_categoryID.ToString)
-                i.name = .Item(CN_name.ToString)
-                i.description = .Item(CN_description.ToString)
-                i.artist = .Item(CN_artist.ToString)
-                i.startPrice = .Item(CN_startPrice.ToString)
-                i.soldPrice = .Item(CN_soldPrice.ToString)
-                i.soldToID = .Item(CN_soldToID.ToString)
-            End With
-            il.Add(i)
+        For Each customerBid In bt
+            If customerBid.bidCustomerID = customerID Then
+                i = Item.Create(customerBid.itemID)
+                il.Add(i)
+            End If
         Next
+
         Return il
 
     End Function
