@@ -1,14 +1,14 @@
 ﻿Public Class Item
     Inherits BOBase
 
-    Dim _itemID As Integer
-    Dim _categoryID As Integer
-    Dim _name As String
-    Dim _description As String
-    Dim _artist As String
-    Dim _startPrice As Nullable(Of Decimal)
-    Dim _soldPrice As Nullable(Of Decimal)
-    Dim _soldToID As String
+    Private _itemID As Integer
+    Private _categoryID As Integer
+    Private _name As String
+    Private _description As String
+    Private _artist As String
+    Private _startPrice As Nullable(Of Decimal)
+    Private _soldPrice As Nullable(Of Decimal)
+    Private _soldToID As String
 
 #Region "Constants"
     Private Const CN_itemID As String = "itemID"
@@ -72,9 +72,13 @@
                 i.name = .Item(CN_name.ToString)
                 i.description = .Item(CN_description.ToString)
                 i.artist = .Item(CN_artist.ToString)
-                'i.startPrice = .Item(CN_startPrice.ToString)
-                'i.soldPrice = .Item(CN_soldPrice.ToString)
-                'i.soldToID = .Item(CN_soldToID.ToString)
+                i.startPrice = .Item(CN_startPrice.ToString)
+                If .Item(CN_soldPrice) IsNot DBNull.Value Then
+                    i.soldPrice = CType(.Item(CN_soldPrice), Decimal)
+                End If
+                If .Item(CN_soldToID) IsNot DBNull.Value Then
+                    i.soldToID = CType(.Item(CN_soldToID), Decimal)
+                End If
             End With
             il.Add(i)
         Next
@@ -103,18 +107,17 @@
 
     Public Shared Function GetItemsByCustomer(ByVal customerID As String) As List(Of Item)
         Dim il As List(Of Item) = New List(Of Item)
-        Dim bt As List(Of Bid) = New List(Of Bid)
-        bt = Bid.Create()
-        Dim i As Item
+        Dim rl As List(Of Item) = New List(Of Item)
+        il = Item.Create()
 
-        For Each customerBid In bt
-            If customerBid.bidCustomerID = customerID Then
-                i = Item.Create(customerBid.itemID)
-                il.Add(i)
+        For Each item In il
+            If Not String.IsNullOrEmpty(item.soldToID) Then
+                If item.soldToID.Equals(customerID) Then
+                    rl.Add(item)
+                End If
             End If
         Next
-
-        Return il
+        Return rl
 
     End Function
 #End Region
@@ -161,9 +164,13 @@
             Return _description
         End Get
         Set(ByVal value As String)
-            If _description <> value Then
-                _description = value
-                Me.DataStateChanged(EntityStateEnum.Modified)
+            If IsDBNull(value) Then
+                _description = String.Empty
+            Else
+                If _description <> value Then
+                    _description = value
+                    Me.DataStateChanged(EntityStateEnum.Modified)
+                End If
             End If
         End Set
     End Property
@@ -195,17 +202,23 @@
         End Set
     End Property
 
-    Public Property soldPrice() As Decimal
+    Public Property soldPrice() As Nullable(Of Decimal)
         Get
-            If _startPrice.HasValue Then
+            If _soldPrice.HasValue Then
                 Return Decimal.Round(_soldPrice.Value, 2)
             End If
             Return 0.00
         End Get
-        Set(ByVal value As Decimal)
-            If _soldPrice <> value Then
+        Set(ByVal value As Nullable(Of Decimal))
+            If (_soldPrice.HasValue <> value.HasValue) OrElse
+                (_soldPrice.HasValue AndAlso
+                value.HasValue AndAlso
+                _soldPrice.Value <> value.Value) Then
                 _soldPrice = value
                 Me.DataStateChanged(EntityStateEnum.Modified)
+
+            Else
+                _soldPrice = 0.0
             End If
         End Set
     End Property
@@ -215,9 +228,13 @@
             Return _soldToID
         End Get
         Set(ByVal value As String)
-            If _soldToID <> value Then
-                _soldToID = value
-                Me.DataStateChanged(EntityStateEnum.Modified)
+            If IsDBNull(value) Then
+                _soldToID = String.Empty
+            Else
+                If _soldToID <> value Then
+                    _soldToID = value
+                    Me.DataStateChanged(EntityStateEnum.Modified)
+                End If
             End If
         End Set
     End Property
