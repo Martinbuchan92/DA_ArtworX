@@ -60,8 +60,10 @@ Partial Class FormCustomers
         Me.btnClose = New System.Windows.Forms.Button()
         Me.ItemBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         CType(Me.ItemBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -294,7 +296,7 @@ Partial Class FormCustomers
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(367, 33)
+        Me.btnAdd.Location = New System.Drawing.Point(272, 13)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(75, 23)
         Me.btnAdd.TabIndex = 28
@@ -303,7 +305,7 @@ Partial Class FormCustomers
         '
         'btnEdit
         '
-        Me.btnEdit.Location = New System.Drawing.Point(367, 62)
+        Me.btnEdit.Location = New System.Drawing.Point(272, 42)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(75, 23)
         Me.btnEdit.TabIndex = 29
@@ -312,7 +314,7 @@ Partial Class FormCustomers
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(367, 91)
+        Me.btnUpdate.Location = New System.Drawing.Point(272, 71)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
         Me.btnUpdate.TabIndex = 30
@@ -321,7 +323,7 @@ Partial Class FormCustomers
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(367, 120)
+        Me.btnDelete.Location = New System.Drawing.Point(272, 100)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 23)
         Me.btnDelete.TabIndex = 31
@@ -330,7 +332,7 @@ Partial Class FormCustomers
         '
         'btnFind
         '
-        Me.btnFind.Location = New System.Drawing.Point(367, 149)
+        Me.btnFind.Location = New System.Drawing.Point(272, 129)
         Me.btnFind.Name = "btnFind"
         Me.btnFind.Size = New System.Drawing.Size(75, 23)
         Me.btnFind.TabIndex = 32
@@ -339,7 +341,7 @@ Partial Class FormCustomers
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(367, 178)
+        Me.btnCancel.Location = New System.Drawing.Point(272, 158)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 33
@@ -348,7 +350,7 @@ Partial Class FormCustomers
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(367, 207)
+        Me.btnClose.Location = New System.Drawing.Point(272, 187)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 23)
         Me.btnClose.TabIndex = 34
@@ -363,11 +365,20 @@ Partial Class FormCustomers
         '
         Me.CustomerBindingSource.DataSource = GetType(ArtworxBOC.Customer)
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(374, 20)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(383, 423)
+        Me.DataGridView1.TabIndex = 35
+        '
         'FormCustomers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(454, 468)
+        Me.ClientSize = New System.Drawing.Size(771, 468)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnFind)
@@ -407,6 +418,7 @@ Partial Class FormCustomers
         Me.Text = "Customers"
         CType(Me.ItemBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -448,4 +460,5 @@ Partial Class FormCustomers
     Friend WithEvents btnFind As Button
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnClose As Button
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

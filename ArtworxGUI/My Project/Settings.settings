@@ -53,5 +53,8 @@
     <Setting Name="SP_BidGetWinnerForItem" Type="System.String" Scope="User">
       <Value Profile="(Default)">usp_BidGetWinnerForItem</Value>
     </Setting>
+    <Setting Name="SP_BidHighestForItem" Type="System.String" Scope="User">
+      <Value Profile="(Default)">usp_BidHighestFormItem</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
