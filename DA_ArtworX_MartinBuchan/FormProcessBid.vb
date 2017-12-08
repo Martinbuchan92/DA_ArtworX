@@ -19,14 +19,17 @@ Public Class FormProcessBid
             lblCreditStatus.Text = person.creditStatus
         Next
 
+
+
         For Each bid In b
 
         Next
 
         For Each item In i
             cmbSelectItem.Items.Add(item.name)
-            lblHighestBid.Text = "$0000"
+            lblHighestBid.Text = ""
         Next
 
     End Sub
+
 End Class

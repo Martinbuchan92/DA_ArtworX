@@ -40,7 +40,7 @@ Public Class FormArtworxParent
 
 
     Private Sub ViewCustomersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewCustomersToolStripMenuItem.Click
-        Dim f As New FormCustomers
+        Dim f As New FormCustomerItemMasterDetail
         f.MdiParent = Me
         f.Show()
     End Sub

@@ -80,6 +80,12 @@
     <Compile Include="FormAuctionQueries.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormCustomerItemMasterDetail.Designer.vb">
+      <DependentUpon>FormCustomerItemMasterDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCustomerItemMasterDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormCustomers.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     <EmbeddedResource Include="FormArtworxParent.resx">
       <DependentUpon>FormArtworxParent.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCustomerItemMasterDetail.resx">
+      <DependentUpon>FormCustomerItemMasterDetail.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCustomers.resx">
       <DependentUpon>FormCustomers.vb</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +153,8 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\ArtworxBOC.Customer.datasource" />
+    <None Include="My Project\DataSources\ArtworxBOC.Item.datasource" />
     <None Include="My Project\DataSources\ArtworxGUI.Bid.datasource" />
     <None Include="My Project\DataSources\ArtworxGUI.BOBase+EntityStateEnum.datasource" />
     <None Include="My Project\DataSources\ArtworxGUI.BOBase.datasource" />

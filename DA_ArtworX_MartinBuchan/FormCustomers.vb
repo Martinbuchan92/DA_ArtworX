@@ -138,5 +138,7 @@ Public Class FormCustomers
     Private Sub btnLast_Click(sender As Object, e As EventArgs) Handles btnLast.Click
         index = limit
         DisplayListData()
+        DataGridView1.DataSource = GetType(ArtworxBOC.Item)
+
     End Sub
 End Class
