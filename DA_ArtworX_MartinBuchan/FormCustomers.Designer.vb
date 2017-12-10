@@ -47,29 +47,19 @@ Partial Class FormCustomers
         Me.txtAccountNumber = New System.Windows.Forms.TextBox()
         Me.txtAccountName = New System.Windows.Forms.TextBox()
         Me.txtSwiftCode = New System.Windows.Forms.TextBox()
-        Me.btnFirst = New System.Windows.Forms.Button()
-        Me.btnPrevious = New System.Windows.Forms.Button()
-        Me.btnNext = New System.Windows.Forms.Button()
-        Me.btnLast = New System.Windows.Forms.Button()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnEdit = New System.Windows.Forms.Button()
-        Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.btnFind = New System.Windows.Forms.Button()
-        Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.CmbSelectCustomer = New System.Windows.Forms.ComboBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.ItemBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         CType(Me.ItemBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(15, 16)
+        Me.Label1.Location = New System.Drawing.Point(15, 52)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(62, 13)
         Me.Label1.TabIndex = 0
@@ -78,7 +68,7 @@ Partial Class FormCustomers
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(15, 43)
+        Me.Label2.Location = New System.Drawing.Point(15, 79)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(55, 13)
         Me.Label2.TabIndex = 1
@@ -87,7 +77,7 @@ Partial Class FormCustomers
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(15, 70)
+        Me.Label3.Location = New System.Drawing.Point(15, 106)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 13)
         Me.Label3.TabIndex = 2
@@ -96,7 +86,7 @@ Partial Class FormCustomers
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(15, 102)
+        Me.Label4.Location = New System.Drawing.Point(15, 138)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(57, 13)
         Me.Label4.TabIndex = 3
@@ -105,7 +95,7 @@ Partial Class FormCustomers
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(15, 134)
+        Me.Label5.Location = New System.Drawing.Point(15, 170)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(58, 13)
         Me.Label5.TabIndex = 4
@@ -114,7 +104,7 @@ Partial Class FormCustomers
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(15, 167)
+        Me.Label6.Location = New System.Drawing.Point(15, 203)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(31, 13)
         Me.Label6.TabIndex = 5
@@ -123,7 +113,7 @@ Partial Class FormCustomers
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(15, 201)
+        Me.Label7.Location = New System.Drawing.Point(15, 237)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(38, 13)
         Me.Label7.TabIndex = 6
@@ -132,7 +122,7 @@ Partial Class FormCustomers
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(15, 231)
+        Me.Label8.Location = New System.Drawing.Point(15, 267)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(45, 13)
         Me.Label8.TabIndex = 7
@@ -141,7 +131,7 @@ Partial Class FormCustomers
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(15, 267)
+        Me.Label9.Location = New System.Drawing.Point(15, 303)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(64, 13)
         Me.Label9.TabIndex = 8
@@ -150,7 +140,7 @@ Partial Class FormCustomers
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(15, 306)
+        Me.Label10.Location = New System.Drawing.Point(15, 342)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(87, 13)
         Me.Label10.TabIndex = 9
@@ -159,7 +149,7 @@ Partial Class FormCustomers
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(15, 336)
+        Me.Label11.Location = New System.Drawing.Point(15, 372)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(78, 13)
         Me.Label11.TabIndex = 10
@@ -168,7 +158,7 @@ Partial Class FormCustomers
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(15, 368)
+        Me.Label12.Location = New System.Drawing.Point(15, 404)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(58, 13)
         Me.Label12.TabIndex = 11
@@ -176,186 +166,126 @@ Partial Class FormCustomers
         '
         'txtCustomerID
         '
-        Me.txtCustomerID.Location = New System.Drawing.Point(83, 12)
+        Me.txtCustomerID.Enabled = False
+        Me.txtCustomerID.Location = New System.Drawing.Point(108, 49)
         Me.txtCustomerID.Name = "txtCustomerID"
-        Me.txtCustomerID.Size = New System.Drawing.Size(100, 20)
+        Me.txtCustomerID.Size = New System.Drawing.Size(257, 20)
         Me.txtCustomerID.TabIndex = 12
         '
         'txtUsername
         '
-        Me.txtUsername.Location = New System.Drawing.Point(83, 43)
+        Me.txtUsername.Enabled = False
+        Me.txtUsername.Location = New System.Drawing.Point(108, 76)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(100, 20)
+        Me.txtUsername.Size = New System.Drawing.Size(257, 20)
         Me.txtUsername.TabIndex = 13
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(83, 67)
+        Me.txtPassword.Enabled = False
+        Me.txtPassword.Location = New System.Drawing.Point(108, 103)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(100, 20)
+        Me.txtPassword.Size = New System.Drawing.Size(257, 20)
         Me.txtPassword.TabIndex = 14
         '
         'txtFirstName
         '
-        Me.txtFirstName.Location = New System.Drawing.Point(83, 99)
+        Me.txtFirstName.Enabled = False
+        Me.txtFirstName.Location = New System.Drawing.Point(108, 135)
         Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(100, 20)
+        Me.txtFirstName.Size = New System.Drawing.Size(257, 20)
         Me.txtFirstName.TabIndex = 15
         '
         'txtLastName
         '
-        Me.txtLastName.Location = New System.Drawing.Point(83, 131)
+        Me.txtLastName.Enabled = False
+        Me.txtLastName.Location = New System.Drawing.Point(108, 167)
         Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(100, 20)
+        Me.txtLastName.Size = New System.Drawing.Size(257, 20)
         Me.txtLastName.TabIndex = 16
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(83, 164)
+        Me.txtEmail.Enabled = False
+        Me.txtEmail.Location = New System.Drawing.Point(108, 200)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(100, 20)
+        Me.txtEmail.Size = New System.Drawing.Size(257, 20)
         Me.txtEmail.TabIndex = 17
         '
         'txtPhone
         '
-        Me.txtPhone.Location = New System.Drawing.Point(83, 198)
+        Me.txtPhone.Enabled = False
+        Me.txtPhone.Location = New System.Drawing.Point(108, 234)
         Me.txtPhone.Name = "txtPhone"
-        Me.txtPhone.Size = New System.Drawing.Size(100, 20)
+        Me.txtPhone.Size = New System.Drawing.Size(257, 20)
         Me.txtPhone.TabIndex = 18
         '
         'txtAddress
         '
-        Me.txtAddress.Location = New System.Drawing.Point(83, 228)
+        Me.txtAddress.Enabled = False
+        Me.txtAddress.Location = New System.Drawing.Point(108, 264)
         Me.txtAddress.Name = "txtAddress"
-        Me.txtAddress.Size = New System.Drawing.Size(100, 20)
+        Me.txtAddress.Size = New System.Drawing.Size(257, 20)
         Me.txtAddress.TabIndex = 19
         '
         'txtCreditStatus
         '
-        Me.txtCreditStatus.Location = New System.Drawing.Point(85, 264)
+        Me.txtCreditStatus.Enabled = False
+        Me.txtCreditStatus.Location = New System.Drawing.Point(108, 300)
         Me.txtCreditStatus.Name = "txtCreditStatus"
-        Me.txtCreditStatus.Size = New System.Drawing.Size(100, 20)
+        Me.txtCreditStatus.Size = New System.Drawing.Size(257, 20)
         Me.txtCreditStatus.TabIndex = 20
         '
         'txtAccountNumber
         '
-        Me.txtAccountNumber.Location = New System.Drawing.Point(108, 303)
+        Me.txtAccountNumber.Enabled = False
+        Me.txtAccountNumber.Location = New System.Drawing.Point(108, 339)
         Me.txtAccountNumber.Name = "txtAccountNumber"
-        Me.txtAccountNumber.Size = New System.Drawing.Size(100, 20)
+        Me.txtAccountNumber.Size = New System.Drawing.Size(257, 20)
         Me.txtAccountNumber.TabIndex = 21
         '
         'txtAccountName
         '
-        Me.txtAccountName.Location = New System.Drawing.Point(108, 333)
+        Me.txtAccountName.Enabled = False
+        Me.txtAccountName.Location = New System.Drawing.Point(108, 369)
         Me.txtAccountName.Name = "txtAccountName"
-        Me.txtAccountName.Size = New System.Drawing.Size(100, 20)
+        Me.txtAccountName.Size = New System.Drawing.Size(257, 20)
         Me.txtAccountName.TabIndex = 22
         '
         'txtSwiftCode
         '
-        Me.txtSwiftCode.Location = New System.Drawing.Point(83, 365)
+        Me.txtSwiftCode.Enabled = False
+        Me.txtSwiftCode.Location = New System.Drawing.Point(108, 401)
         Me.txtSwiftCode.Name = "txtSwiftCode"
-        Me.txtSwiftCode.Size = New System.Drawing.Size(100, 20)
+        Me.txtSwiftCode.Size = New System.Drawing.Size(257, 20)
         Me.txtSwiftCode.TabIndex = 23
-        '
-        'btnFirst
-        '
-        Me.btnFirst.Location = New System.Drawing.Point(27, 433)
-        Me.btnFirst.Name = "btnFirst"
-        Me.btnFirst.Size = New System.Drawing.Size(75, 23)
-        Me.btnFirst.TabIndex = 24
-        Me.btnFirst.Text = "|<"
-        Me.btnFirst.UseVisualStyleBackColor = True
-        '
-        'btnPrevious
-        '
-        Me.btnPrevious.Location = New System.Drawing.Point(110, 433)
-        Me.btnPrevious.Name = "btnPrevious"
-        Me.btnPrevious.Size = New System.Drawing.Size(75, 23)
-        Me.btnPrevious.TabIndex = 25
-        Me.btnPrevious.Text = "<<"
-        Me.btnPrevious.UseVisualStyleBackColor = True
-        '
-        'btnNext
-        '
-        Me.btnNext.Location = New System.Drawing.Point(191, 433)
-        Me.btnNext.Name = "btnNext"
-        Me.btnNext.Size = New System.Drawing.Size(75, 23)
-        Me.btnNext.TabIndex = 26
-        Me.btnNext.Text = ">>"
-        Me.btnNext.UseVisualStyleBackColor = True
-        '
-        'btnLast
-        '
-        Me.btnLast.Location = New System.Drawing.Point(272, 433)
-        Me.btnLast.Name = "btnLast"
-        Me.btnLast.Size = New System.Drawing.Size(75, 23)
-        Me.btnLast.TabIndex = 27
-        Me.btnLast.Text = ">|"
-        Me.btnLast.UseVisualStyleBackColor = True
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Location = New System.Drawing.Point(272, 13)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(75, 23)
-        Me.btnAdd.TabIndex = 28
-        Me.btnAdd.Text = "Add"
-        Me.btnAdd.UseVisualStyleBackColor = True
-        '
-        'btnEdit
-        '
-        Me.btnEdit.Location = New System.Drawing.Point(272, 42)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(75, 23)
-        Me.btnEdit.TabIndex = 29
-        Me.btnEdit.Text = "Edit"
-        Me.btnEdit.UseVisualStyleBackColor = True
-        '
-        'btnUpdate
-        '
-        Me.btnUpdate.Location = New System.Drawing.Point(272, 71)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
-        Me.btnUpdate.TabIndex = 30
-        Me.btnUpdate.Text = "Update"
-        Me.btnUpdate.UseVisualStyleBackColor = True
-        '
-        'btnDelete
-        '
-        Me.btnDelete.Location = New System.Drawing.Point(272, 100)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
-        Me.btnDelete.TabIndex = 31
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseVisualStyleBackColor = True
-        '
-        'btnFind
-        '
-        Me.btnFind.Location = New System.Drawing.Point(272, 129)
-        Me.btnFind.Name = "btnFind"
-        Me.btnFind.Size = New System.Drawing.Size(75, 23)
-        Me.btnFind.TabIndex = 32
-        Me.btnFind.Text = "Find"
-        Me.btnFind.UseVisualStyleBackColor = True
-        '
-        'btnCancel
-        '
-        Me.btnCancel.Location = New System.Drawing.Point(272, 158)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancel.TabIndex = 33
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = True
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(272, 187)
+        Me.btnClose.Location = New System.Drawing.Point(290, 433)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 23)
-        Me.btnClose.TabIndex = 34
+        Me.btnClose.TabIndex = 2
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
+        '
+        'CmbSelectCustomer
+        '
+        Me.CmbSelectCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbSelectCustomer.FormattingEnabled = True
+        Me.CmbSelectCustomer.Location = New System.Drawing.Point(108, 17)
+        Me.CmbSelectCustomer.Name = "CmbSelectCustomer"
+        Me.CmbSelectCustomer.Size = New System.Drawing.Size(155, 21)
+        Me.CmbSelectCustomer.TabIndex = 1
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(15, 20)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(87, 13)
+        Me.Label13.TabIndex = 36
+        Me.Label13.Text = "Select Customer:"
         '
         'ItemBindingSource
         '
@@ -365,31 +295,15 @@ Partial Class FormCustomers
         '
         Me.CustomerBindingSource.DataSource = GetType(ArtworxBOC.Customer)
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(374, 20)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(383, 423)
-        Me.DataGridView1.TabIndex = 35
-        '
         'FormCustomers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(771, 468)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.CancelButton = Me.btnClose
+        Me.ClientSize = New System.Drawing.Size(377, 468)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.CmbSelectCustomer)
         Me.Controls.Add(Me.btnClose)
-        Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.btnFind)
-        Me.Controls.Add(Me.btnDelete)
-        Me.Controls.Add(Me.btnUpdate)
-        Me.Controls.Add(Me.btnEdit)
-        Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.btnLast)
-        Me.Controls.Add(Me.btnNext)
-        Me.Controls.Add(Me.btnPrevious)
-        Me.Controls.Add(Me.btnFirst)
         Me.Controls.Add(Me.txtSwiftCode)
         Me.Controls.Add(Me.txtAccountName)
         Me.Controls.Add(Me.txtAccountNumber)
@@ -418,7 +332,6 @@ Partial Class FormCustomers
         Me.Text = "Customers"
         CType(Me.ItemBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -449,16 +362,7 @@ Partial Class FormCustomers
     Friend WithEvents txtAccountNumber As TextBox
     Friend WithEvents txtAccountName As TextBox
     Friend WithEvents txtSwiftCode As TextBox
-    Friend WithEvents btnFirst As Button
-    Friend WithEvents btnPrevious As Button
-    Friend WithEvents btnNext As Button
-    Friend WithEvents btnLast As Button
-    Friend WithEvents btnAdd As Button
-    Friend WithEvents btnEdit As Button
-    Friend WithEvents btnUpdate As Button
-    Friend WithEvents btnDelete As Button
-    Friend WithEvents btnFind As Button
-    Friend WithEvents btnCancel As Button
     Friend WithEvents btnClose As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents CmbSelectCustomer As ComboBox
+    Friend WithEvents Label13 As Label
 End Class

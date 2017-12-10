@@ -7,6 +7,7 @@
     Dim _bidPrice As Decimal
     Dim _bidDate As Nullable(Of Date)
     Dim _bidCustomerID As String
+    Dim _lastUpdateUser As String
 
 #Region "Constants"
     Private Const CN_bidID As String = "bidID"
@@ -19,11 +20,7 @@
 
 #Region "Constructors"
     Public Sub New()
-
-    End Sub
-
-    Public Sub New(ByVal bidID As String)
-
+        EntityState = EntityStateEnum.Added
     End Sub
 #End Region
 
@@ -77,14 +74,16 @@
         Dim success As Boolean = False
         Dim dt As DataTable
         dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_BidSave,
-            ArtworxDAC.DAC.Parameter(CN_bidID, bidID),
-            ArtworxDAC.DAC.Parameter(CN_itemID, itemID),
-            ArtworxDAC.DAC.Parameter(CN_pickup, pickup),
-            ArtworxDAC.DAC.Parameter(CN_bidPrice, bidPrice),
-            ArtworxDAC.DAC.Parameter(CN_bidDate, bidDate),
-            ArtworxDAC.DAC.Parameter(CN_bidCustomerID, bidCustomerID))
+            ArtworxDAC.DAC.Parameter("bid_ID", bidID),
+            ArtworxDAC.DAC.Parameter("bid_itemID", itemID),
+            ArtworxDAC.DAC.Parameter("bid_pickup", pickup),
+            ArtworxDAC.DAC.Parameter("bid_bidPrice", bidPrice),
+            ArtworxDAC.DAC.Parameter("bid_bidDate", bidDate),
+            ArtworxDAC.DAC.Parameter("bid_bidCustomerID", bidCustomerID),
+            ArtworxDAC.DAC.Parameter("LastUpdateUser", "mb"),
+            ArtworxDAC.DAC.Parameter(CN_RowState, EntityState.ToString))
         If EntityState = EntityStateEnum.Added Then
-            bidID = CType(dt.Rows(0).Item(CN_bidID), String)
+            bidID = CType(dt.Rows(0).Item(CN_bidID), Integer)
         End If
         Me.DataStateChanged(EntityStateEnum.UnChanged)
         success = True

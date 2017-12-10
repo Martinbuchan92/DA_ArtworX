@@ -9,6 +9,7 @@
     Private _startPrice As Nullable(Of Decimal)
     Private _soldPrice As Nullable(Of Decimal)
     Private _soldToID As String
+    Private _highestBid As Nullable(Of Decimal)
 
 #Region "Constants"
     Private Const CN_itemID As String = "itemID"
@@ -19,6 +20,10 @@
     Private Const CN_startPrice As String = "startPrice"
     Private Const CN_soldPrice As String = "soldPrice"
     Private Const CN_soldToID As String = "soldToID"
+
+    Private Const CN_highestBid As String = "HighestBid"
+    Private Const CN_spItemID As String = "Item_ID"
+
 #End Region
 
 #Region "Constructors"
@@ -79,6 +84,7 @@
                 If .Item(CN_soldToID) IsNot DBNull.Value Then
                     i.soldToID = CType(.Item(CN_soldToID), Decimal)
                 End If
+
             End With
             il.Add(i)
         Next
@@ -118,7 +124,26 @@
             End If
         Next
         Return rl
+    End Function
 
+    Public Shared Function gethighestBid(ByVal itemID As Integer) As Decimal
+        Dim highestBid As Decimal
+        Dim b As List(Of Bid) = ArtworxBOC.Bid.Create()
+        Dim i As List(Of Item) = ArtworxBOC.Item.Create()
+
+        'Dim dt As DataTable
+        'dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_BidHighestForItem,
+        '    ArtworxDAC.DAC.Parameter(CN_highestBid, highestBid),
+        '    ArtworxDAC.DAC.Parameter(CN_spItemID, itemID))
+        'highestBid = CType(dt.Rows(0).Item(0), Integer)
+
+        For Each bid In b
+            For Each item In i
+
+            Next
+        Next
+
+        Return highestBid
     End Function
 #End Region
 
@@ -189,10 +214,10 @@
 
     Public Property startPrice() As Decimal
         Get
-            If _startPrice.HasValue Then
+            If _startPrice.HasValue AND _startPrice >= 1000 then
                 Return Decimal.Round(_startPrice.Value, 2)
             End If
-            Return 0.00
+            Return 100000.0
         End Get
         Set(ByVal value As Decimal)
             If _startPrice <> value Then

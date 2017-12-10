@@ -74,10 +74,10 @@
   <ItemGroup>
     <Compile Include="ErrorLogger.vb" />
     <Compile Include="EventLogger.vb" />
-    <Compile Include="FormAuctionQueries.Designer.vb">
-      <DependentUpon>FormAuctionQueries.vb</DependentUpon>
+    <Compile Include="FormSellItem.Designer.vb">
+      <DependentUpon>FormSellItem.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAuctionQueries.vb">
+    <Compile Include="FormSellItem.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCustomerItemMasterDetail.Designer.vb">
@@ -138,8 +138,14 @@
     <EmbeddedResource Include="FormCustomers.resx">
       <DependentUpon>FormCustomers.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormItems.resx">
+      <DependentUpon>FormItems.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProcessBid.resx">
       <DependentUpon>FormProcessBid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSellItem.resx">
+      <DependentUpon>FormSellItem.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -155,12 +161,6 @@
     </None>
     <None Include="My Project\DataSources\ArtworxBOC.Customer.datasource" />
     <None Include="My Project\DataSources\ArtworxBOC.Item.datasource" />
-    <None Include="My Project\DataSources\ArtworxGUI.Bid.datasource" />
-    <None Include="My Project\DataSources\ArtworxGUI.BOBase+EntityStateEnum.datasource" />
-    <None Include="My Project\DataSources\ArtworxGUI.BOBase.datasource" />
-    <None Include="My Project\DataSources\ArtworxGUI.Category.datasource" />
-    <None Include="My Project\DataSources\ArtworxGUI.Customer.datasource" />
-    <None Include="My Project\DataSources\ArtworxGUI.Item.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>

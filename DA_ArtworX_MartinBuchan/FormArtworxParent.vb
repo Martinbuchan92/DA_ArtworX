@@ -50,4 +50,22 @@ Public Class FormArtworxParent
         f.MdiParent = Me
         f.Show()
     End Sub
+
+    Private Sub ViewCustomersToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ViewCustomersToolStripMenuItem1.Click
+        Dim f As New FormCustomers
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub ViewItemsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewItemsToolStripMenuItem.Click
+        Dim f As New FormItems
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub AuctionQueriesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AuctionQueriesToolStripMenuItem.Click
+        Dim f As New FormSellItem
+        f.MdiParent = Me
+        f.Show()
+    End Sub
 End Class

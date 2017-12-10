@@ -2,59 +2,59 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
   <Profiles />
   <Settings>
-    <Setting Name="Setting" Type="System.String" Scope="User">
+    <Setting Name="Setting" Type="System.String" Scope="Application">
       <Value Profile="(Default)">test</Value>
     </Setting>
-    <Setting Name="SP_CategorySave" Type="System.String" Scope="User">
+    <Setting Name="SP_CategorySave" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_CategorySave</Value>
     </Setting>
-    <Setting Name="SP_ItemSave" Type="System.String" Scope="User">
+    <Setting Name="SP_ItemSave" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_ItemSave</Value>
     </Setting>
-    <Setting Name="SP_CustomerSave" Type="System.String" Scope="User">
+    <Setting Name="SP_CustomerSave" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_CustomerSave</Value>
     </Setting>
-    <Setting Name="SP_BidSave" Type="System.String" Scope="User">
+    <Setting Name="SP_BidSave" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_BidSave</Value>
     </Setting>
-    <Setting Name="SP_CategoryGetByID" Type="System.String" Scope="User">
+    <Setting Name="SP_CategoryGetByID" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_CategoryGetByID</Value>
     </Setting>
-    <Setting Name="SP_ItemGetByID" Type="System.String" Scope="User">
+    <Setting Name="SP_ItemGetByID" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_ItemGetByID</Value>
     </Setting>
-    <Setting Name="SP_CustomerGetByID" Type="System.String" Scope="User">
+    <Setting Name="SP_CustomerGetByID" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_CustomerGetByID</Value>
     </Setting>
-    <Setting Name="SP_BidGetById" Type="System.String" Scope="User">
+    <Setting Name="SP_BidGetById" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_BidGetByID</Value>
     </Setting>
-    <Setting Name="SP_CategoryList" Type="System.String" Scope="User">
+    <Setting Name="SP_CategoryList" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_CategoryList</Value>
     </Setting>
-    <Setting Name="SP_ItemList" Type="System.String" Scope="User">
+    <Setting Name="SP_ItemList" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_ItemList</Value>
     </Setting>
-    <Setting Name="SP_CustomerList" Type="System.String" Scope="User">
+    <Setting Name="SP_CustomerList" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_CustomerList</Value>
     </Setting>
-    <Setting Name="SP_BidList" Type="System.String" Scope="User">
+    <Setting Name="SP_BidList" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_BidList</Value>
     </Setting>
-    <Setting Name="SP_CategoryNames" Type="System.String" Scope="User">
+    <Setting Name="SP_CategoryNames" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_CategoryNames</Value>
     </Setting>
-    <Setting Name="SP_ItemNames" Type="System.String" Scope="User">
+    <Setting Name="SP_ItemNames" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_ItemNames</Value>
     </Setting>
-    <Setting Name="SP_CustomerNames" Type="System.String" Scope="User">
+    <Setting Name="SP_CustomerNames" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_CustomerNames</Value>
     </Setting>
-    <Setting Name="SP_BidGetWinnerForItem" Type="System.String" Scope="User">
+    <Setting Name="SP_BidGetWinnerForItem" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usp_BidGetWinnerForItem</Value>
     </Setting>
-    <Setting Name="SP_BidHighestForItem" Type="System.String" Scope="User">
-      <Value Profile="(Default)">usp_BidHighestFormItem</Value>
+    <Setting Name="SP_BidHighestForItem" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">usp_BidHighestForItem</Value>
     </Setting>
   </Settings>
 </SettingsFile>

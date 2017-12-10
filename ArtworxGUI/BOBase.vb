@@ -48,7 +48,7 @@ Public Class BOBase
 
 #Region "constructors"
     Public Sub New()
-        ' TODO: code this constructor
+        EntityState = EntityStateEnum.Added
     End Sub
 #End Region
 
