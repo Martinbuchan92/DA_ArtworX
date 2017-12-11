@@ -1,4 +1,6 @@
-﻿Public Class Bid
+﻿Imports ArtworxDAC.DAC
+
+Public Class Bid
     Inherits BOBase
 
     Dim _bidID As Integer
@@ -8,6 +10,7 @@
     Dim _bidDate As Nullable(Of Date)
     Dim _bidCustomerID As String
     Dim _lastUpdateUser As String
+
 
 #Region "Constants"
     Private Const CN_bidID As String = "bidID"
@@ -70,17 +73,34 @@
         Return cl
     End Function
 
-    Public Shared Function Bidhighestforitem(ByVal itemID As Integer) As Decimal
+    Public Shared Function Bidhighestforitem(ByVal itemID As Integer, ByVal ID As Boolean) As String
         Dim dt As New DataTable
         Dim hb As Decimal
-        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_BidHighestForItem, ArtworxDAC.DAC.Parameter("item_ID", itemID), ArtworxDAC.DAC.Parameter("highestBid", 0))
+        Dim cid As String = "N.a"
 
-        With dt.Rows(0)
-            hb = .Item("HighestBid".ToString)
-        End With
+        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_BidHighestForItem, ArtworxDAC.DAC.Parameter("highestBid", 0), ArtworxDAC.DAC.Parameter("item_ID", itemID), ArtworxDAC.DAC.Parameter("Customer_ID", 0))
+        If Not (dt Is Nothing) Then
+            With dt.Rows(0)
+                If .Item(0) IsNot DBNull.Value Then
+                    hb = .Item(0)
+                    If .Item(1) IsNot DBNull.Value Then
+                        cid = .Item(1)
+                    End If
+                End If
+            End With
+        End If
+        If ID Then
+            Return cid
+        End If
+        Return Format(hb, "c")
+    End Function
 
-
-        Return hb
+    Public Shared Function setWinningBid(ByVal itemID As Integer, ByVal highestBid As Decimal, ByVal customerID As String) As Boolean
+        Dim dt As New DataTable
+        Dim success As Boolean = False
+        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_SetWinningBidForItem, ArtworxDAC.DAC.Parameter("HighestBid", highestBid), ArtworxDAC.DAC.Parameter("item_ID", itemID), ArtworxDAC.DAC.Parameter("Winning_Customer", 0))
+        success = True
+        Return success
     End Function
 
     Public Function Save() As Boolean
@@ -103,8 +123,6 @@
         Return success
     End Function
 #End Region
-
-
 
 #Region "Property Procedures"
     Public Property bidID() As Integer

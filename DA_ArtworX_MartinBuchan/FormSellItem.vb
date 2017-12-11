@@ -4,7 +4,8 @@ Public Class FormSellItem
     Dim i As List(Of Item)
     Dim b As List(Of Bid)
     Dim customerID As String
-    Dim highestBid As Decimal
+    Dim highestBid As String
+    Dim itemIndex As Integer
 
     Private Sub FormSellItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         i = Item.Create
@@ -16,18 +17,11 @@ Public Class FormSellItem
     End Sub
 
     Private Sub CmbItem_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbItem.SelectedIndexChanged
+        itemIndex = CmbItem.SelectedIndex
 
-        highestBid = Item.gethighestBid(CmbItem.SelectedIndex)
+        highestBid = Bid.Bidhighestforitem(i.Item(itemIndex).itemID, False)
+        customerID = Bid.Bidhighestforitem(i.Item(itemIndex).itemID, True)
         Me.TxtHighestBid.Text = highestBid
-
-        For Each bid In b
-            If bid.itemID.Equals(i.Item(CmbItem.SelectedIndex).itemID) Then
-                If bid.bidPrice = highestBid Then
-                    customerID = bid.bidCustomerID
-                End If
-            End If
-        Next
-
         Me.TxtCustomerID.Text = customerID
 
     End Sub
@@ -37,7 +31,8 @@ Public Class FormSellItem
     End Sub
 
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
-        'TODO: Add stuff
-
+        Dim success As Boolean
+        success = Bid.setWinningBid(i.Item(itemIndex).itemID, 0, 0)
+        MsgBox(success.ToString)
     End Sub
 End Class

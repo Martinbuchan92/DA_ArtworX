@@ -82,7 +82,7 @@
                     i.soldPrice = CType(.Item(CN_soldPrice), Decimal)
                 End If
                 If .Item(CN_soldToID) IsNot DBNull.Value Then
-                    i.soldToID = CType(.Item(CN_soldToID), Decimal)
+                    i.soldToID = .Item(CN_soldToID.ToString)
                 End If
 
             End With

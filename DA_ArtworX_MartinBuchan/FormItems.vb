@@ -12,9 +12,6 @@ Public Class FormItems
 
         For Each item In i
             CmbSelectItem.Items.Add(item.name + ", " + item.artist)
-            If Not IsNothing(item.soldToID) Then
-                lblSold.Visible = True
-            End If
         Next
     End Sub
 
@@ -32,9 +29,14 @@ Public Class FormItems
     Private Sub CmbSelectItem_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbSelectItem.SelectedIndexChanged
         index = CmbSelectItem.SelectedIndex
         DisplayListData()
+        If Not txtSoldPrice.Text.Equals("0") Then
+            lblSold.Visible = True
+        Else
+            lblSold.Visible = False
+        End If
     End Sub
 
-    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
 End Class

@@ -51,18 +51,7 @@ Public Class FormProcessBid
         itemIndex = cmbSelectItem.SelectedIndex
         DisplayListData()
 
-        'If Not IsNothing(b) Then
-        '    Dim highestBid = Item.gethighestBid(itemIndex)
-        '    For Each bid In b
-        '        If bid.bidID = highestBid Then
-        '            lblHighestBid.Text = bid.bidPrice.ToString
-        '        End If
-        '    Next
-
-        'Else
-        '    MsgBox("no bids")
-        'End If
-
+        lblHighestBid.Text = Bid.Bidhighestforitem(i.Item(itemIndex).itemID, False)
     End Sub
 
     Private Sub btnAcceptBid_Click(sender As Object, e As EventArgs) Handles btnAcceptBid.Click
@@ -83,10 +72,5 @@ Public Class FormProcessBid
         Else
             MsgBox("Please enter a higher bid")
         End If
-    End Sub
-
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-        txtName.Text = Bid.Bidhighestforitem(1)
-
     End Sub
 End Class
