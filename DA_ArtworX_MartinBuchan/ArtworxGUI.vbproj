@@ -74,16 +74,16 @@
   <ItemGroup>
     <Compile Include="ErrorLogger.vb" />
     <Compile Include="EventLogger.vb" />
-    <Compile Include="FormSellItem.Designer.vb">
-      <DependentUpon>FormSellItem.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormSellItem.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormCustomerItemMasterDetail.Designer.vb">
       <DependentUpon>FormCustomerItemMasterDetail.vb</DependentUpon>
     </Compile>
     <Compile Include="FormCustomerItemMasterDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSellItem.Designer.vb">
+      <DependentUpon>FormSellItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormSellItem.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCustomers.vb">

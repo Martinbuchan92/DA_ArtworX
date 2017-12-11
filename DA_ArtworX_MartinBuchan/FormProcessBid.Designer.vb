@@ -52,14 +52,17 @@ Partial Class FormProcessBid
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DgvBids = New System.Windows.Forms.DataGridView()
         Me.btnAcceptBid = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvBids, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -73,9 +76,9 @@ Partial Class FormProcessBid
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(24, 23)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(6)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(6)
         Me.GroupBox1.Size = New System.Drawing.Size(896, 200)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -86,7 +89,7 @@ Partial Class FormProcessBid
         Me.cmbSelectItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbSelectItem.FormattingEnabled = True
         Me.cmbSelectItem.Location = New System.Drawing.Point(222, 123)
-        Me.cmbSelectItem.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.cmbSelectItem.Margin = New System.Windows.Forms.Padding(6)
         Me.cmbSelectItem.Name = "cmbSelectItem"
         Me.cmbSelectItem.Size = New System.Drawing.Size(238, 33)
         Me.cmbSelectItem.TabIndex = 7
@@ -96,7 +99,7 @@ Partial Class FormProcessBid
         Me.cmbSelectCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbSelectCustomer.FormattingEnabled = True
         Me.cmbSelectCustomer.Location = New System.Drawing.Point(222, 50)
-        Me.cmbSelectCustomer.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.cmbSelectCustomer.Margin = New System.Windows.Forms.Padding(6)
         Me.cmbSelectCustomer.Name = "cmbSelectCustomer"
         Me.cmbSelectCustomer.Size = New System.Drawing.Size(238, 33)
         Me.cmbSelectCustomer.TabIndex = 6
@@ -168,9 +171,9 @@ Partial Class FormProcessBid
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Location = New System.Drawing.Point(24, 235)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(6)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(6)
         Me.GroupBox2.Size = New System.Drawing.Size(506, 192)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
@@ -179,7 +182,7 @@ Partial Class FormProcessBid
         'txtAmount
         '
         Me.txtAmount.Location = New System.Drawing.Point(222, 48)
-        Me.txtAmount.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.txtAmount.Margin = New System.Windows.Forms.Padding(6)
         Me.txtAmount.Name = "txtAmount"
         Me.txtAmount.Size = New System.Drawing.Size(238, 31)
         Me.txtAmount.TabIndex = 3
@@ -188,7 +191,7 @@ Partial Class FormProcessBid
         '
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePicker1.Location = New System.Drawing.Point(222, 106)
-        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(6)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(238, 31)
         Me.DateTimePicker1.TabIndex = 2
@@ -230,9 +233,9 @@ Partial Class FormProcessBid
         Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Location = New System.Drawing.Point(24, 438)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(6)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(6)
         Me.GroupBox3.Size = New System.Drawing.Size(896, 408)
         Me.GroupBox3.TabIndex = 1
         Me.GroupBox3.TabStop = False
@@ -241,7 +244,7 @@ Partial Class FormProcessBid
         'txtSoldTo
         '
         Me.txtSoldTo.Location = New System.Drawing.Point(222, 329)
-        Me.txtSoldTo.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.txtSoldTo.Margin = New System.Windows.Forms.Padding(6)
         Me.txtSoldTo.Name = "txtSoldTo"
         Me.txtSoldTo.Size = New System.Drawing.Size(548, 31)
         Me.txtSoldTo.TabIndex = 13
@@ -249,7 +252,7 @@ Partial Class FormProcessBid
         'txtSoldPrice
         '
         Me.txtSoldPrice.Location = New System.Drawing.Point(222, 285)
-        Me.txtSoldPrice.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.txtSoldPrice.Margin = New System.Windows.Forms.Padding(6)
         Me.txtSoldPrice.Name = "txtSoldPrice"
         Me.txtSoldPrice.Size = New System.Drawing.Size(238, 31)
         Me.txtSoldPrice.TabIndex = 12
@@ -257,7 +260,7 @@ Partial Class FormProcessBid
         'txtStartPrice
         '
         Me.txtStartPrice.Location = New System.Drawing.Point(222, 240)
-        Me.txtStartPrice.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.txtStartPrice.Margin = New System.Windows.Forms.Padding(6)
         Me.txtStartPrice.Name = "txtStartPrice"
         Me.txtStartPrice.Size = New System.Drawing.Size(238, 31)
         Me.txtStartPrice.TabIndex = 11
@@ -265,7 +268,7 @@ Partial Class FormProcessBid
         'txtArtist
         '
         Me.txtArtist.Location = New System.Drawing.Point(222, 196)
-        Me.txtArtist.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.txtArtist.Margin = New System.Windows.Forms.Padding(6)
         Me.txtArtist.Name = "txtArtist"
         Me.txtArtist.Size = New System.Drawing.Size(548, 31)
         Me.txtArtist.TabIndex = 10
@@ -273,7 +276,7 @@ Partial Class FormProcessBid
         'txtCategory
         '
         Me.txtCategory.Location = New System.Drawing.Point(222, 152)
-        Me.txtCategory.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.txtCategory.Margin = New System.Windows.Forms.Padding(6)
         Me.txtCategory.Name = "txtCategory"
         Me.txtCategory.Size = New System.Drawing.Size(548, 31)
         Me.txtCategory.TabIndex = 9
@@ -281,7 +284,7 @@ Partial Class FormProcessBid
         'txtDescription
         '
         Me.txtDescription.Location = New System.Drawing.Point(222, 108)
-        Me.txtDescription.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.txtDescription.Margin = New System.Windows.Forms.Padding(6)
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.Size = New System.Drawing.Size(548, 31)
         Me.txtDescription.TabIndex = 8
@@ -289,7 +292,7 @@ Partial Class FormProcessBid
         'txtName
         '
         Me.txtName.Location = New System.Drawing.Point(222, 63)
-        Me.txtName.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.txtName.Margin = New System.Windows.Forms.Padding(6)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(548, 31)
         Me.txtName.TabIndex = 7
@@ -366,30 +369,30 @@ Partial Class FormProcessBid
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.DataGridView1)
+        Me.GroupBox4.Controls.Add(Me.DgvBids)
         Me.GroupBox4.Location = New System.Drawing.Point(932, 23)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(6)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(6)
         Me.GroupBox4.Size = New System.Drawing.Size(482, 704)
         Me.GroupBox4.TabIndex = 1
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Current Bids..."
         '
-        'DataGridView1
+        'DgvBids
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 30)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(470, 668)
-        Me.DataGridView1.TabIndex = 0
+        Me.DgvBids.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvBids.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgvBids.Location = New System.Drawing.Point(6, 30)
+        Me.DgvBids.Margin = New System.Windows.Forms.Padding(6)
+        Me.DgvBids.Name = "DgvBids"
+        Me.DgvBids.Size = New System.Drawing.Size(470, 668)
+        Me.DgvBids.TabIndex = 0
         '
         'btnAcceptBid
         '
         Me.btnAcceptBid.Location = New System.Drawing.Point(1172, 738)
-        Me.btnAcceptBid.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.btnAcceptBid.Margin = New System.Windows.Forms.Padding(6)
         Me.btnAcceptBid.Name = "btnAcceptBid"
         Me.btnAcceptBid.Size = New System.Drawing.Size(236, 44)
         Me.btnAcceptBid.TabIndex = 2
@@ -399,25 +402,42 @@ Partial Class FormProcessBid
         'btnClose
         '
         Me.btnClose.Location = New System.Drawing.Point(1172, 794)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(6)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(236, 44)
         Me.btnClose.TabIndex = 3
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 880)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(1446, 37)
+        Me.StatusStrip1.TabIndex = 4
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ToolStripStatusLabel1
+        '
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(241, 32)
+        Me.ToolStripStatusLabel1.Text = "ToolStripStatusLabel1"
+        '
         'FormProcessBid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1446, 867)
+        Me.ClientSize = New System.Drawing.Size(1446, 917)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnAcceptBid)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.Margin = New System.Windows.Forms.Padding(6)
         Me.Name = "FormProcessBid"
         Me.Text = "Create Bid"
         Me.GroupBox1.ResumeLayout(False)
@@ -427,8 +447,11 @@ Partial Class FormProcessBid
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvBids, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -444,7 +467,7 @@ Partial Class FormProcessBid
     Friend WithEvents lblCreditStatus As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DgvBids As DataGridView
     Friend WithEvents txtAmount As TextBox
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label6 As Label
@@ -465,4 +488,6 @@ Partial Class FormProcessBid
     Friend WithEvents Label7 As Label
     Friend WithEvents btnAcceptBid As Button
     Friend WithEvents btnClose As Button
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
 End Class

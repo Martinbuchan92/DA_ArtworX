@@ -45,11 +45,16 @@ Public Class FormProcessBid
     Private Sub cmbSelectCustomer_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSelectCustomer.SelectedIndexChanged
         custIndex = cmbSelectCustomer.SelectedIndex
         lblCreditStatus.Text = c(custIndex).creditStatus.ToString
+
     End Sub
 
     Private Sub cmbSelectItem_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSelectItem.SelectedIndexChanged
         itemIndex = cmbSelectItem.SelectedIndex
         DisplayListData()
+
+        'Dim statement As Statement
+
+        'DgvBids.DataSource 
 
         lblHighestBid.Text = Bid.Bidhighestforitem(i.Item(itemIndex).itemID, False)
     End Sub
@@ -59,7 +64,7 @@ Public Class FormProcessBid
         Dim bidDate As String = System.DateTime.Today
 
         'TODO: This 0.0 should be the highest bid
-        If txtAmount.Text > 0.0 Then
+        If txtAmount.Text >= 1000000 Then
             Dim d As New Bid() With {
             .itemID = i(itemIndex).itemID,
             .pickup = False,
@@ -68,9 +73,10 @@ Public Class FormProcessBid
             .bidCustomerID = c(custIndex).customerID}
             b.Add(d)
             Dim success As Boolean = d.Save()
-            MsgBox("Added bid " + success.ToString)
+            ToolStripStatusLabel1.Text = "Added bid " + success.ToString
         Else
             MsgBox("Please enter a higher bid")
         End If
     End Sub
+
 End Class

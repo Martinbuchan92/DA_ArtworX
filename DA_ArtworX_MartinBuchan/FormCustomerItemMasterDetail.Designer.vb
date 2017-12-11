@@ -23,6 +23,7 @@ Partial Class FormCustomerItemMasterDetail
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCustomerItemMasterDetail))
         Dim AccountNameLabel As System.Windows.Forms.Label
         Dim AccountNumberLabel As System.Windows.Forms.Label
         Dim AddressLabel As System.Windows.Forms.Label
@@ -35,14 +36,14 @@ Partial Class FormCustomerItemMasterDetail
         Dim PhoneLabel As System.Windows.Forms.Label
         Dim SwiftCodeLabel As System.Windows.Forms.Label
         Dim UserNameLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCustomerItemMasterDetail))
-        Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.CustomerBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
@@ -59,16 +60,18 @@ Partial Class FormCustomerItemMasterDetail
         Me.PhoneTextBox = New System.Windows.Forms.TextBox()
         Me.SwiftCodeTextBox = New System.Windows.Forms.TextBox()
         Me.UserNameTextBox = New System.Windows.Forms.TextBox()
-        Me.ItemBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ItemDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BtnClose = New System.Windows.Forms.Button()
+        Me.ItemBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         AccountNameLabel = New System.Windows.Forms.Label()
         AccountNumberLabel = New System.Windows.Forms.Label()
         AddressLabel = New System.Windows.Forms.Label()
@@ -81,136 +84,12 @@ Partial Class FormCustomerItemMasterDetail
         PhoneLabel = New System.Windows.Forms.Label()
         SwiftCodeLabel = New System.Windows.Forms.Label()
         UserNameLabel = New System.Windows.Forms.Label()
-        CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomerBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CustomerBindingNavigator.SuspendLayout()
-        CType(Me.ItemBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ItemBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'AccountNameLabel
-        '
-        AccountNameLabel.AutoSize = True
-        AccountNameLabel.Location = New System.Drawing.Point(28, 68)
-        AccountNameLabel.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        AccountNameLabel.Name = "AccountNameLabel"
-        AccountNameLabel.Size = New System.Drawing.Size(156, 25)
-        AccountNameLabel.TabIndex = 1
-        AccountNameLabel.Text = "account Name:"
-        '
-        'AccountNumberLabel
-        '
-        AccountNumberLabel.AutoSize = True
-        AccountNumberLabel.Location = New System.Drawing.Point(28, 118)
-        AccountNumberLabel.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        AccountNumberLabel.Name = "AccountNumberLabel"
-        AccountNumberLabel.Size = New System.Drawing.Size(175, 25)
-        AccountNumberLabel.TabIndex = 3
-        AccountNumberLabel.Text = "account Number:"
-        '
-        'AddressLabel
-        '
-        AddressLabel.AutoSize = True
-        AddressLabel.Location = New System.Drawing.Point(28, 168)
-        AddressLabel.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        AddressLabel.Name = "AddressLabel"
-        AddressLabel.Size = New System.Drawing.Size(95, 25)
-        AddressLabel.TabIndex = 5
-        AddressLabel.Text = "address:"
-        '
-        'CreditStatusLabel
-        '
-        CreditStatusLabel.AutoSize = True
-        CreditStatusLabel.Location = New System.Drawing.Point(28, 218)
-        CreditStatusLabel.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        CreditStatusLabel.Name = "CreditStatusLabel"
-        CreditStatusLabel.Size = New System.Drawing.Size(138, 25)
-        CreditStatusLabel.TabIndex = 7
-        CreditStatusLabel.Text = "credit Status:"
-        '
-        'CustomerIDLabel
-        '
-        CustomerIDLabel.AutoSize = True
-        CustomerIDLabel.Location = New System.Drawing.Point(28, 268)
-        CustomerIDLabel.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        CustomerIDLabel.Name = "CustomerIDLabel"
-        CustomerIDLabel.Size = New System.Drawing.Size(132, 25)
-        CustomerIDLabel.TabIndex = 9
-        CustomerIDLabel.Text = "customer ID:"
-        '
-        'EmailLabel
-        '
-        EmailLabel.AutoSize = True
-        EmailLabel.Location = New System.Drawing.Point(28, 318)
-        EmailLabel.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        EmailLabel.Name = "EmailLabel"
-        EmailLabel.Size = New System.Drawing.Size(69, 25)
-        EmailLabel.TabIndex = 11
-        EmailLabel.Text = "email:"
-        '
-        'FirstNameLabel
-        '
-        FirstNameLabel.AutoSize = True
-        FirstNameLabel.Location = New System.Drawing.Point(28, 368)
-        FirstNameLabel.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        FirstNameLabel.Name = "FirstNameLabel"
-        FirstNameLabel.Size = New System.Drawing.Size(115, 25)
-        FirstNameLabel.TabIndex = 13
-        FirstNameLabel.Text = "first Name:"
-        '
-        'LastNameLabel
-        '
-        LastNameLabel.AutoSize = True
-        LastNameLabel.Location = New System.Drawing.Point(28, 418)
-        LastNameLabel.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        LastNameLabel.Name = "LastNameLabel"
-        LastNameLabel.Size = New System.Drawing.Size(114, 25)
-        LastNameLabel.TabIndex = 15
-        LastNameLabel.Text = "last Name:"
-        '
-        'PasswordLabel
-        '
-        PasswordLabel.AutoSize = True
-        PasswordLabel.Location = New System.Drawing.Point(28, 468)
-        PasswordLabel.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        PasswordLabel.Name = "PasswordLabel"
-        PasswordLabel.Size = New System.Drawing.Size(110, 25)
-        PasswordLabel.TabIndex = 17
-        PasswordLabel.Text = "password:"
-        '
-        'PhoneLabel
-        '
-        PhoneLabel.AutoSize = True
-        PhoneLabel.Location = New System.Drawing.Point(28, 518)
-        PhoneLabel.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        PhoneLabel.Name = "PhoneLabel"
-        PhoneLabel.Size = New System.Drawing.Size(78, 25)
-        PhoneLabel.TabIndex = 19
-        PhoneLabel.Text = "phone:"
-        '
-        'SwiftCodeLabel
-        '
-        SwiftCodeLabel.AutoSize = True
-        SwiftCodeLabel.Location = New System.Drawing.Point(28, 568)
-        SwiftCodeLabel.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        SwiftCodeLabel.Name = "SwiftCodeLabel"
-        SwiftCodeLabel.Size = New System.Drawing.Size(118, 25)
-        SwiftCodeLabel.TabIndex = 21
-        SwiftCodeLabel.Text = "swift Code:"
-        '
-        'UserNameLabel
-        '
-        UserNameLabel.AutoSize = True
-        UserNameLabel.Location = New System.Drawing.Point(28, 618)
-        UserNameLabel.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        UserNameLabel.Name = "UserNameLabel"
-        UserNameLabel.Size = New System.Drawing.Size(122, 25)
-        UserNameLabel.TabIndex = 23
-        UserNameLabel.Text = "user Name:"
-        '
-        'CustomerBindingSource
-        '
-        Me.CustomerBindingSource.DataSource = GetType(ArtworxBOC.Customer)
         '
         'CustomerBindingNavigator
         '
@@ -219,25 +98,17 @@ Partial Class FormCustomerItemMasterDetail
         Me.CustomerBindingNavigator.CountItem = Me.BindingNavigatorCountItem
         Me.CustomerBindingNavigator.DeleteItem = Nothing
         Me.CustomerBindingNavigator.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.CustomerBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorMoveLastItem})
+        Me.CustomerBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2})
         Me.CustomerBindingNavigator.Location = New System.Drawing.Point(0, 0)
         Me.CustomerBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.CustomerBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
         Me.CustomerBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
         Me.CustomerBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.CustomerBindingNavigator.Name = "CustomerBindingNavigator"
-        Me.CustomerBindingNavigator.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
         Me.CustomerBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.CustomerBindingNavigator.Size = New System.Drawing.Size(1443, 39)
+        Me.CustomerBindingNavigator.Size = New System.Drawing.Size(1363, 39)
         Me.CustomerBindingNavigator.TabIndex = 0
         Me.CustomerBindingNavigator.Text = "BindingNavigator1"
-        '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(71, 36)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -267,13 +138,20 @@ Partial Class FormCustomerItemMasterDetail
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(96, 39)
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 39)
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(71, 36)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 39)
         '
         'BindingNavigatorMoveNextItem
@@ -296,120 +174,212 @@ Partial Class FormCustomerItemMasterDetail
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 39)
+        '
+        'AccountNameLabel
+        '
+        AccountNameLabel.AutoSize = True
+        AccountNameLabel.Location = New System.Drawing.Point(15, 84)
+        AccountNameLabel.Name = "AccountNameLabel"
+        AccountNameLabel.Size = New System.Drawing.Size(156, 25)
+        AccountNameLabel.TabIndex = 1
+        AccountNameLabel.Text = "account Name:"
         '
         'AccountNameTextBox
         '
         Me.AccountNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "accountName", True))
-        Me.AccountNameTextBox.Location = New System.Drawing.Point(218, 62)
-        Me.AccountNameTextBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.AccountNameTextBox.Location = New System.Drawing.Point(196, 81)
         Me.AccountNameTextBox.Name = "AccountNameTextBox"
-        Me.AccountNameTextBox.Size = New System.Drawing.Size(196, 31)
+        Me.AccountNameTextBox.Size = New System.Drawing.Size(232, 31)
         Me.AccountNameTextBox.TabIndex = 2
+        '
+        'AccountNumberLabel
+        '
+        AccountNumberLabel.AutoSize = True
+        AccountNumberLabel.Location = New System.Drawing.Point(15, 121)
+        AccountNumberLabel.Name = "AccountNumberLabel"
+        AccountNumberLabel.Size = New System.Drawing.Size(175, 25)
+        AccountNumberLabel.TabIndex = 3
+        AccountNumberLabel.Text = "account Number:"
         '
         'AccountNumberTextBox
         '
         Me.AccountNumberTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "accountNumber", True))
-        Me.AccountNumberTextBox.Location = New System.Drawing.Point(218, 112)
-        Me.AccountNumberTextBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.AccountNumberTextBox.Location = New System.Drawing.Point(196, 118)
         Me.AccountNumberTextBox.Name = "AccountNumberTextBox"
-        Me.AccountNumberTextBox.Size = New System.Drawing.Size(196, 31)
+        Me.AccountNumberTextBox.Size = New System.Drawing.Size(232, 31)
         Me.AccountNumberTextBox.TabIndex = 4
+        '
+        'AddressLabel
+        '
+        AddressLabel.AutoSize = True
+        AddressLabel.Location = New System.Drawing.Point(15, 158)
+        AddressLabel.Name = "AddressLabel"
+        AddressLabel.Size = New System.Drawing.Size(95, 25)
+        AddressLabel.TabIndex = 5
+        AddressLabel.Text = "address:"
         '
         'AddressTextBox
         '
         Me.AddressTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "address", True))
-        Me.AddressTextBox.Location = New System.Drawing.Point(218, 162)
-        Me.AddressTextBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.AddressTextBox.Location = New System.Drawing.Point(196, 155)
         Me.AddressTextBox.Name = "AddressTextBox"
-        Me.AddressTextBox.Size = New System.Drawing.Size(196, 31)
+        Me.AddressTextBox.Size = New System.Drawing.Size(232, 31)
         Me.AddressTextBox.TabIndex = 6
+        '
+        'CreditStatusLabel
+        '
+        CreditStatusLabel.AutoSize = True
+        CreditStatusLabel.Location = New System.Drawing.Point(15, 195)
+        CreditStatusLabel.Name = "CreditStatusLabel"
+        CreditStatusLabel.Size = New System.Drawing.Size(138, 25)
+        CreditStatusLabel.TabIndex = 7
+        CreditStatusLabel.Text = "credit Status:"
         '
         'CreditStatusTextBox
         '
         Me.CreditStatusTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "creditStatus", True))
-        Me.CreditStatusTextBox.Location = New System.Drawing.Point(218, 212)
-        Me.CreditStatusTextBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.CreditStatusTextBox.Location = New System.Drawing.Point(196, 192)
         Me.CreditStatusTextBox.Name = "CreditStatusTextBox"
-        Me.CreditStatusTextBox.Size = New System.Drawing.Size(196, 31)
+        Me.CreditStatusTextBox.Size = New System.Drawing.Size(232, 31)
         Me.CreditStatusTextBox.TabIndex = 8
+        '
+        'CustomerIDLabel
+        '
+        CustomerIDLabel.AutoSize = True
+        CustomerIDLabel.Location = New System.Drawing.Point(15, 232)
+        CustomerIDLabel.Name = "CustomerIDLabel"
+        CustomerIDLabel.Size = New System.Drawing.Size(132, 25)
+        CustomerIDLabel.TabIndex = 9
+        CustomerIDLabel.Text = "customer ID:"
         '
         'CustomerIDTextBox
         '
         Me.CustomerIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "customerID", True))
-        Me.CustomerIDTextBox.Location = New System.Drawing.Point(218, 262)
-        Me.CustomerIDTextBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.CustomerIDTextBox.Location = New System.Drawing.Point(196, 229)
         Me.CustomerIDTextBox.Name = "CustomerIDTextBox"
-        Me.CustomerIDTextBox.Size = New System.Drawing.Size(196, 31)
+        Me.CustomerIDTextBox.Size = New System.Drawing.Size(232, 31)
         Me.CustomerIDTextBox.TabIndex = 10
+        '
+        'EmailLabel
+        '
+        EmailLabel.AutoSize = True
+        EmailLabel.Location = New System.Drawing.Point(15, 269)
+        EmailLabel.Name = "EmailLabel"
+        EmailLabel.Size = New System.Drawing.Size(69, 25)
+        EmailLabel.TabIndex = 11
+        EmailLabel.Text = "email:"
         '
         'EmailTextBox
         '
         Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "email", True))
-        Me.EmailTextBox.Location = New System.Drawing.Point(218, 312)
-        Me.EmailTextBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.EmailTextBox.Location = New System.Drawing.Point(196, 266)
         Me.EmailTextBox.Name = "EmailTextBox"
-        Me.EmailTextBox.Size = New System.Drawing.Size(196, 31)
+        Me.EmailTextBox.Size = New System.Drawing.Size(232, 31)
         Me.EmailTextBox.TabIndex = 12
+        '
+        'FirstNameLabel
+        '
+        FirstNameLabel.AutoSize = True
+        FirstNameLabel.Location = New System.Drawing.Point(15, 306)
+        FirstNameLabel.Name = "FirstNameLabel"
+        FirstNameLabel.Size = New System.Drawing.Size(115, 25)
+        FirstNameLabel.TabIndex = 13
+        FirstNameLabel.Text = "first Name:"
         '
         'FirstNameTextBox
         '
         Me.FirstNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "firstName", True))
-        Me.FirstNameTextBox.Location = New System.Drawing.Point(218, 362)
-        Me.FirstNameTextBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.FirstNameTextBox.Location = New System.Drawing.Point(196, 303)
         Me.FirstNameTextBox.Name = "FirstNameTextBox"
-        Me.FirstNameTextBox.Size = New System.Drawing.Size(196, 31)
+        Me.FirstNameTextBox.Size = New System.Drawing.Size(232, 31)
         Me.FirstNameTextBox.TabIndex = 14
+        '
+        'LastNameLabel
+        '
+        LastNameLabel.AutoSize = True
+        LastNameLabel.Location = New System.Drawing.Point(15, 343)
+        LastNameLabel.Name = "LastNameLabel"
+        LastNameLabel.Size = New System.Drawing.Size(114, 25)
+        LastNameLabel.TabIndex = 15
+        LastNameLabel.Text = "last Name:"
         '
         'LastNameTextBox
         '
         Me.LastNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "lastName", True))
-        Me.LastNameTextBox.Location = New System.Drawing.Point(218, 412)
-        Me.LastNameTextBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.LastNameTextBox.Location = New System.Drawing.Point(196, 340)
         Me.LastNameTextBox.Name = "LastNameTextBox"
-        Me.LastNameTextBox.Size = New System.Drawing.Size(196, 31)
+        Me.LastNameTextBox.Size = New System.Drawing.Size(232, 31)
         Me.LastNameTextBox.TabIndex = 16
+        '
+        'PasswordLabel
+        '
+        PasswordLabel.AutoSize = True
+        PasswordLabel.Location = New System.Drawing.Point(15, 380)
+        PasswordLabel.Name = "PasswordLabel"
+        PasswordLabel.Size = New System.Drawing.Size(110, 25)
+        PasswordLabel.TabIndex = 17
+        PasswordLabel.Text = "password:"
         '
         'PasswordTextBox
         '
         Me.PasswordTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "password", True))
-        Me.PasswordTextBox.Location = New System.Drawing.Point(218, 462)
-        Me.PasswordTextBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.PasswordTextBox.Location = New System.Drawing.Point(196, 377)
         Me.PasswordTextBox.Name = "PasswordTextBox"
-        Me.PasswordTextBox.Size = New System.Drawing.Size(196, 31)
+        Me.PasswordTextBox.Size = New System.Drawing.Size(232, 31)
         Me.PasswordTextBox.TabIndex = 18
+        '
+        'PhoneLabel
+        '
+        PhoneLabel.AutoSize = True
+        PhoneLabel.Location = New System.Drawing.Point(15, 417)
+        PhoneLabel.Name = "PhoneLabel"
+        PhoneLabel.Size = New System.Drawing.Size(78, 25)
+        PhoneLabel.TabIndex = 19
+        PhoneLabel.Text = "phone:"
         '
         'PhoneTextBox
         '
         Me.PhoneTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "phone", True))
-        Me.PhoneTextBox.Location = New System.Drawing.Point(218, 512)
-        Me.PhoneTextBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.PhoneTextBox.Location = New System.Drawing.Point(196, 414)
         Me.PhoneTextBox.Name = "PhoneTextBox"
-        Me.PhoneTextBox.Size = New System.Drawing.Size(196, 31)
+        Me.PhoneTextBox.Size = New System.Drawing.Size(232, 31)
         Me.PhoneTextBox.TabIndex = 20
+        '
+        'SwiftCodeLabel
+        '
+        SwiftCodeLabel.AutoSize = True
+        SwiftCodeLabel.Location = New System.Drawing.Point(15, 454)
+        SwiftCodeLabel.Name = "SwiftCodeLabel"
+        SwiftCodeLabel.Size = New System.Drawing.Size(118, 25)
+        SwiftCodeLabel.TabIndex = 21
+        SwiftCodeLabel.Text = "swift Code:"
         '
         'SwiftCodeTextBox
         '
         Me.SwiftCodeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "swiftCode", True))
-        Me.SwiftCodeTextBox.Location = New System.Drawing.Point(218, 562)
-        Me.SwiftCodeTextBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.SwiftCodeTextBox.Location = New System.Drawing.Point(196, 451)
         Me.SwiftCodeTextBox.Name = "SwiftCodeTextBox"
-        Me.SwiftCodeTextBox.Size = New System.Drawing.Size(196, 31)
+        Me.SwiftCodeTextBox.Size = New System.Drawing.Size(232, 31)
         Me.SwiftCodeTextBox.TabIndex = 22
+        '
+        'UserNameLabel
+        '
+        UserNameLabel.AutoSize = True
+        UserNameLabel.Location = New System.Drawing.Point(15, 491)
+        UserNameLabel.Name = "UserNameLabel"
+        UserNameLabel.Size = New System.Drawing.Size(122, 25)
+        UserNameLabel.TabIndex = 23
+        UserNameLabel.Text = "user Name:"
         '
         'UserNameTextBox
         '
         Me.UserNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "userName", True))
-        Me.UserNameTextBox.Location = New System.Drawing.Point(218, 612)
-        Me.UserNameTextBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.UserNameTextBox.Location = New System.Drawing.Point(196, 488)
         Me.UserNameTextBox.Name = "UserNameTextBox"
-        Me.UserNameTextBox.Size = New System.Drawing.Size(196, 31)
+        Me.UserNameTextBox.Size = New System.Drawing.Size(232, 31)
         Me.UserNameTextBox.TabIndex = 24
-        '
-        'ItemBindingSource
-        '
-        Me.ItemBindingSource.DataSource = GetType(ArtworxBOC.Item)
         '
         'ItemDataGridView
         '
@@ -417,53 +387,28 @@ Partial Class FormCustomerItemMasterDetail
         Me.ItemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ItemDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
         Me.ItemDataGridView.DataSource = Me.ItemBindingSource
-        Me.ItemDataGridView.Location = New System.Drawing.Point(509, 16)
-        Me.ItemDataGridView.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.ItemDataGridView.Location = New System.Drawing.Point(489, 30)
         Me.ItemDataGridView.Name = "ItemDataGridView"
-        Me.ItemDataGridView.Size = New System.Drawing.Size(844, 663)
+        Me.ItemDataGridView.RowTemplate.Height = 33
+        Me.ItemDataGridView.Size = New System.Drawing.Size(844, 489)
         Me.ItemDataGridView.TabIndex = 25
         '
-        'DataGridViewTextBoxColumn8
+        'BtnClose
         '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "soldToID"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "soldToID"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.BtnClose.Location = New System.Drawing.Point(1165, 553)
+        Me.BtnClose.Name = "BtnClose"
+        Me.BtnClose.Size = New System.Drawing.Size(168, 42)
+        Me.BtnClose.TabIndex = 26
+        Me.BtnClose.Text = "Close"
+        Me.BtnClose.UseVisualStyleBackColor = True
         '
-        'DataGridViewTextBoxColumn7
+        'ItemBindingSource
         '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "soldPrice"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "soldPrice"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.ItemBindingSource.DataSource = GetType(ArtworxBOC.Item)
         '
-        'DataGridViewTextBoxColumn6
+        'CustomerBindingSource
         '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "startPrice"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "startPrice"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "artist"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "artist"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "description"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "description"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "name"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "name"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "categoryID"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "categoryID"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.CustomerBindingSource.DataSource = GetType(ArtworxBOC.Customer)
         '
         'DataGridViewTextBoxColumn1
         '
@@ -471,11 +416,60 @@ Partial Class FormCustomerItemMasterDetail
         Me.DataGridViewTextBoxColumn1.HeaderText = "itemID"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "categoryID"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "categoryID"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "name"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "name"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "description"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "description"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "artist"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "artist"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "startPrice"
+        DataGridViewCellStyle3.Format = "C2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridViewTextBoxColumn6.HeaderText = "startPrice"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "soldPrice"
+        DataGridViewCellStyle4.Format = "C2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridViewTextBoxColumn7.HeaderText = "soldPrice"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "soldToID"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "soldToID"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        '
         'FormCustomerItemMasterDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1443, 717)
+        Me.ClientSize = New System.Drawing.Size(1363, 621)
+        Me.Controls.Add(Me.BtnClose)
         Me.Controls.Add(Me.ItemDataGridView)
         Me.Controls.Add(AccountNameLabel)
         Me.Controls.Add(Me.AccountNameTextBox)
@@ -502,15 +496,14 @@ Partial Class FormCustomerItemMasterDetail
         Me.Controls.Add(UserNameLabel)
         Me.Controls.Add(Me.UserNameTextBox)
         Me.Controls.Add(Me.CustomerBindingNavigator)
-        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.Name = "FormCustomerItemMasterDetail"
-        Me.Text = "Customer Items"
-        CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "Customer and Item"
         CType(Me.CustomerBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CustomerBindingNavigator.ResumeLayout(False)
         Me.CustomerBindingNavigator.PerformLayout()
-        CType(Me.ItemBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ItemBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -541,6 +534,7 @@ Partial Class FormCustomerItemMasterDetail
     Friend WithEvents UserNameTextBox As TextBox
     Friend WithEvents ItemBindingSource As BindingSource
     Friend WithEvents ItemDataGridView As DataGridView
+    Friend WithEvents BtnClose As Button
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
