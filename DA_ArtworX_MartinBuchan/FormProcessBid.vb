@@ -3,13 +3,10 @@
 Public Class FormProcessBid
     Private c As List(Of ArtworxBOC.Customer)
     Private i As List(Of ArtworxBOC.Item)
-    Private b As List(Of ArtworxBOC.Bid)
+    Private b As List(Of ArtworxBOC.Bid) = Bid.Create()
     Private a As List(Of ArtworxBOC.Category)
     Private itemIndex As Integer
     Private custIndex As Integer
-    Dim highestBid As Decimal
-
-
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
@@ -53,23 +50,27 @@ Public Class FormProcessBid
     Private Sub cmbSelectItem_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSelectItem.SelectedIndexChanged
         itemIndex = cmbSelectItem.SelectedIndex
         DisplayListData()
-        lblHighestBid.Text = Item.gethighestBid(itemIndex)
-        'For Each bid In b
-        '    For Each item In i
-        '        If bid.itemID = i(itemIndex).itemID Then
-        '            If highestBid < bid.bidPrice Then
-        '                highestBid = bid.bidPrice
-        '                lblHighestBid.Text = "$" + highestBid.ToString
-        '            End If
+
+        'If Not IsNothing(b) Then
+        '    Dim highestBid = Item.gethighestBid(itemIndex)
+        '    For Each bid In b
+        '        If bid.bidID = highestBid Then
+        '            lblHighestBid.Text = bid.bidPrice.ToString
         '        End If
         '    Next
-        'Next
+
+        'Else
+        '    MsgBox("no bids")
+        'End If
+
     End Sub
 
     Private Sub btnAcceptBid_Click(sender As Object, e As EventArgs) Handles btnAcceptBid.Click
         Dim bidAmount As Decimal = txtAmount.Text
         Dim bidDate As String = System.DateTime.Today
-        If txtAmount.Text > highestBid Then
+
+        'TODO: This 0.0 should be the highest bid
+        If txtAmount.Text > 0.0 Then
             Dim d As New Bid() With {
             .itemID = i(itemIndex).itemID,
             .pickup = False,
@@ -78,9 +79,14 @@ Public Class FormProcessBid
             .bidCustomerID = c(custIndex).customerID}
             b.Add(d)
             Dim success As Boolean = d.Save()
-            MsgBox("Added bid" + success.ToString)
+            MsgBox("Added bid " + success.ToString)
         Else
             MsgBox("Please enter a higher bid")
         End If
+    End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+        txtName.Text = Bid.Bidhighestforitem(1)
+
     End Sub
 End Class

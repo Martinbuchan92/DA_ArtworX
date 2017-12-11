@@ -33,7 +33,7 @@
         Dim c As Bid
         Dim dt As DataTable
 
-        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_CustomerGetByID, ArtworxDAC.DAC.Parameter(CN_bidID, bidID))
+        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_BidGetById, ArtworxDAC.DAC.Parameter(CN_bidID, bidID))
         c = New Bid()
         With dt.Rows(0)
             c.bidID = .Item(CN_bidID.ToString)
@@ -70,6 +70,19 @@
         Return cl
     End Function
 
+    Public Shared Function Bidhighestforitem(ByVal itemID As Integer) As Decimal
+        Dim dt As New DataTable
+        Dim hb As Decimal
+        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_BidHighestForItem, ArtworxDAC.DAC.Parameter("item_ID", itemID), ArtworxDAC.DAC.Parameter("highestBid", 0))
+
+        With dt.Rows(0)
+            hb = .Item("HighestBid".ToString)
+        End With
+
+
+        Return hb
+    End Function
+
     Public Function Save() As Boolean
         Dim success As Boolean = False
         Dim dt As DataTable
@@ -90,6 +103,8 @@
         Return success
     End Function
 #End Region
+
+
 
 #Region "Property Procedures"
     Public Property bidID() As Integer
@@ -134,8 +149,12 @@
         End Get
         Set(ByVal value As Decimal)
             If _bidPrice <> value Then
-                _bidPrice = value
-                Me.DataStateChanged(EntityStateEnum.Modified)
+                If value >= 1000000 Then
+                    _bidPrice = value
+                    Me.DataStateChanged(EntityStateEnum.Modified)
+                Else
+                    value = 1000000
+                End If
             End If
         End Set
     End Property

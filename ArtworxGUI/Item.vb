@@ -126,10 +126,11 @@
         Return rl
     End Function
 
-    Public Shared Function gethighestBid(ByVal itemID As Integer) As Decimal
+    Public Shared Function gethighestBid(ByVal selectedItem As Integer) As Integer
         Dim highestBid As Decimal
         Dim b As List(Of Bid) = ArtworxBOC.Bid.Create()
         Dim i As List(Of Item) = ArtworxBOC.Item.Create()
+        Dim bidID As Integer
 
         'Dim dt As DataTable
         'dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_BidHighestForItem,
@@ -139,11 +140,15 @@
 
         For Each bid In b
             For Each item In i
-
+                If bid.itemID = item.itemID Then
+                    If bid.bidPrice > highestBid Then
+                        bidID = bid.bidID
+                    End If
+                End If
             Next
         Next
 
-        Return highestBid
+        Return bidID
     End Function
 #End Region
 
