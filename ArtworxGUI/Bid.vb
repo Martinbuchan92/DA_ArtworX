@@ -73,24 +73,33 @@ Public Class Bid
         Return cl
     End Function
 
-    Public Shared Function Bidhighestforitem(ByVal itemID As Integer, ByVal ID As Boolean) As String
+    Public Shared Function CustIDForHighestBid(ByVal itemID As Integer) As String
+        Dim customerID As String = ""
+        Dim b As List(Of Bid) = Bid.Create()
+        Dim i As List(Of Item) = Item.Create()
+
+        For Each bid In b
+            If itemID = bid.itemID Then
+                If bid.bidPrice = Bidhighestforitem(itemID) Then
+                    customerID = bid.bidCustomerID
+                End If
+            End If
+        Next
+
+        Return customerID
+    End Function
+
+    Public Shared Function Bidhighestforitem(ByVal itemID As Integer) As String
         Dim dt As New DataTable
         Dim hb As Decimal
-        Dim cid As String = "N.a"
 
-        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_BidHighestForItem, ArtworxDAC.DAC.Parameter("highestBid", 0), ArtworxDAC.DAC.Parameter("item_ID", itemID), ArtworxDAC.DAC.Parameter("Customer_ID", 0))
+        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_BidHighestForItem, ArtworxDAC.DAC.Parameter("highestBid", 0), ArtworxDAC.DAC.Parameter("item_ID", itemID))
         If Not (dt Is Nothing) Then
             With dt.Rows(0)
                 If .Item(0) IsNot DBNull.Value Then
                     hb = .Item(0)
-                    If .Item(1) IsNot DBNull.Value Then
-                        cid = .Item(1)
-                    End If
                 End If
             End With
-        End If
-        If ID Then
-            Return cid
         End If
         Return Format(hb, "c")
     End Function
@@ -167,11 +176,11 @@ Public Class Bid
         End Get
         Set(ByVal value As Decimal)
             If _bidPrice <> value Then
-                If value >= 1000000 Then
+                If value >= 1000000.0 Then
                     _bidPrice = value
                     Me.DataStateChanged(EntityStateEnum.Modified)
                 Else
-                    value = 1000000
+                    value = 1000000.0
                 End If
             End If
         End Set

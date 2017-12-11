@@ -5,22 +5,24 @@ Public Class FormSellItem
     Dim b As List(Of Bid)
     Dim customerID As String
     Dim highestBid As String
-    Dim itemIndex As Integer
+    Dim itemID As Integer
 
     Private Sub FormSellItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         i = Item.Create
         b = Bid.Create
 
         For Each item In i
-            CmbItem.Items.Add(item.name)
+            If item.soldToID Is Nothing Then
+                CmbItem.Items.Add(item.name)
+            End If
         Next
     End Sub
 
     Private Sub CmbItem_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbItem.SelectedIndexChanged
-        itemIndex = CmbItem.SelectedIndex
+        itemID = i.Item(CmbItem.SelectedIndex).itemID
+        highestBid = Bid.Bidhighestforitem(itemID)
+        customerID = Bid.CustIDForHighestBid(itemID)
 
-        highestBid = Bid.Bidhighestforitem(i.Item(itemIndex).itemID, False)
-        customerID = Bid.Bidhighestforitem(i.Item(itemIndex).itemID, True)
         Me.TxtHighestBid.Text = highestBid
         Me.TxtCustomerID.Text = customerID
 
@@ -32,7 +34,7 @@ Public Class FormSellItem
 
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
         Dim success As Boolean
-        success = Bid.setWinningBid(i.Item(itemIndex).itemID, 0, 0)
+        success = Bid.setWinningBid(itemID, 0, 0)
         MsgBox(success.ToString)
     End Sub
 End Class

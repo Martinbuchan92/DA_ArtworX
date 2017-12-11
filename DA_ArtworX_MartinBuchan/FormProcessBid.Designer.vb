@@ -243,6 +243,7 @@ Partial Class FormProcessBid
         '
         'txtSoldTo
         '
+        Me.txtSoldTo.Enabled = False
         Me.txtSoldTo.Location = New System.Drawing.Point(222, 329)
         Me.txtSoldTo.Margin = New System.Windows.Forms.Padding(6)
         Me.txtSoldTo.Name = "txtSoldTo"
@@ -251,6 +252,7 @@ Partial Class FormProcessBid
         '
         'txtSoldPrice
         '
+        Me.txtSoldPrice.Enabled = False
         Me.txtSoldPrice.Location = New System.Drawing.Point(222, 285)
         Me.txtSoldPrice.Margin = New System.Windows.Forms.Padding(6)
         Me.txtSoldPrice.Name = "txtSoldPrice"
@@ -259,6 +261,7 @@ Partial Class FormProcessBid
         '
         'txtStartPrice
         '
+        Me.txtStartPrice.Enabled = False
         Me.txtStartPrice.Location = New System.Drawing.Point(222, 240)
         Me.txtStartPrice.Margin = New System.Windows.Forms.Padding(6)
         Me.txtStartPrice.Name = "txtStartPrice"
@@ -267,6 +270,7 @@ Partial Class FormProcessBid
         '
         'txtArtist
         '
+        Me.txtArtist.Enabled = False
         Me.txtArtist.Location = New System.Drawing.Point(222, 196)
         Me.txtArtist.Margin = New System.Windows.Forms.Padding(6)
         Me.txtArtist.Name = "txtArtist"
@@ -275,6 +279,7 @@ Partial Class FormProcessBid
         '
         'txtCategory
         '
+        Me.txtCategory.Enabled = False
         Me.txtCategory.Location = New System.Drawing.Point(222, 152)
         Me.txtCategory.Margin = New System.Windows.Forms.Padding(6)
         Me.txtCategory.Name = "txtCategory"
@@ -283,6 +288,7 @@ Partial Class FormProcessBid
         '
         'txtDescription
         '
+        Me.txtDescription.Enabled = False
         Me.txtDescription.Location = New System.Drawing.Point(222, 108)
         Me.txtDescription.Margin = New System.Windows.Forms.Padding(6)
         Me.txtDescription.Name = "txtDescription"
@@ -291,6 +297,7 @@ Partial Class FormProcessBid
         '
         'txtName
         '
+        Me.txtName.Enabled = False
         Me.txtName.Location = New System.Drawing.Point(222, 63)
         Me.txtName.Margin = New System.Windows.Forms.Padding(6)
         Me.txtName.Name = "txtName"
@@ -413,17 +420,16 @@ Partial Class FormProcessBid
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 880)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 895)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1446, 37)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1446, 22)
         Me.StatusStrip1.TabIndex = 4
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'ToolStripStatusLabel1
         '
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(241, 32)
-        Me.ToolStripStatusLabel1.Text = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(0, 17)
         '
         'FormProcessBid
         '

@@ -15,25 +15,27 @@ Public Class FormCustomerItemMasterDetail
     Private Sub UpdateGrid()
         Dim custID As String = Me.CustomerIDTextBox.Text
         Me.ItemBindingSource.DataSource = ArtworxBOC.Item.GetItemsByCustomer(custID)
+        ItemDataGridView.AutoResizeColumns()
     End Sub
 
-    Private Sub BindingNavigatorMoveFirstItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMoveFirstItem.Click
-        Me.CustomerBindingSource.MoveFirst()
-        Me.UpdateGrid()
-    End Sub
+    'Private Sub BindingNavigatorMoveFirstItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMoveFirstItem.Click
+    '    Me.UpdateGrid()
+    'End Sub
 
-    Private Sub BindingNavigatorMovePreviousItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMovePreviousItem.Click
-        Me.CustomerBindingSource.MovePrevious()
-        Me.UpdateGrid()
-    End Sub
+    'Private Sub BindingNavigatorMovePreviousItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMovePreviousItem.Click
+    '    Me.UpdateGrid()
+    'End Sub
 
-    Private Sub BindingNavigatorMoveNextItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMoveNextItem.Click
-        Me.CustomerBindingSource.MoveNext()
-        Me.UpdateGrid()
-    End Sub
+    'Private Sub BindingNavigatorMoveNextItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMoveNextItem.Click
+    '    Me.UpdateGrid()
+    'End Sub
 
-    Private Sub BindingNavigatorMoveLastItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMoveLastItem.Click
-        Me.CustomerBindingSource.MoveLast()
-        Me.UpdateGrid()
+    'Private Sub BindingNavigatorMoveLastItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMoveLastItem.Click
+    '    Me.UpdateGrid()
+    'End Sub
+
+    ' Binding to navigators caused an error related to execution order
+    Private Sub CustomerIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles CustomerIDTextBox.TextChanged
+        Me.UpdateGrid
     End Sub
 End Class

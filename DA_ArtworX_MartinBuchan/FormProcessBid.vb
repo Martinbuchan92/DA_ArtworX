@@ -22,7 +22,10 @@ Public Class FormProcessBid
         Next
 
         For Each item In i
-            cmbSelectItem.Items.Add(item.name)
+            If item.soldToID Is Nothing Then
+                cmbSelectItem.Items.Add(item.name)
+            End If
+
         Next
 
     End Sub
@@ -50,33 +53,50 @@ Public Class FormProcessBid
 
     Private Sub cmbSelectItem_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSelectItem.SelectedIndexChanged
         itemIndex = cmbSelectItem.SelectedIndex
+        SetDataSource()
+    End Sub
+
+    Private Sub SetDataSource()
+        Dim bl As New List(Of Bid)
+
         DisplayListData()
+        lblHighestBid.Text = Bid.Bidhighestforitem(i.Item(itemIndex).itemID)
 
-        'Dim statement As Statement
-
-        'DgvBids.DataSource 
-
-        lblHighestBid.Text = Bid.Bidhighestforitem(i.Item(itemIndex).itemID, False)
+        For Each bid In b
+            If bid.itemID = i.Item(itemIndex).itemID Then
+                bl.Add(bid)
+            End If
+        Next
+        DgvBids.DataSource = bl
     End Sub
 
     Private Sub btnAcceptBid_Click(sender As Object, e As EventArgs) Handles btnAcceptBid.Click
-        Dim bidAmount As Decimal = txtAmount.Text
+        Dim bidAmount As Decimal = Decimal.Parse(txtAmount.Text)
         Dim bidDate As String = System.DateTime.Today
+        Dim Highest As Decimal = ArtworxBOC.Bid.Bidhighestforitem(i(itemIndex).itemID)
+        Dim success As Boolean
 
-        'TODO: This 0.0 should be the highest bid
-        If txtAmount.Text >= 1000000 Then
-            Dim d As New Bid() With {
-            .itemID = i(itemIndex).itemID,
-            .pickup = False,
-            .bidPrice = bidAmount,
-            .bidDate = bidDate.ToString,
-            .bidCustomerID = c(custIndex).customerID}
-            b.Add(d)
-            Dim success As Boolean = d.Save()
-            ToolStripStatusLabel1.Text = "Added bid " + success.ToString
+        If bidAmount >= 1000000 Then
+            If bidAmount > Highest Then
+                Dim d As New Bid() With {
+                    .itemID = i(itemIndex).itemID,
+                    .pickup = False,
+                    .bidPrice = bidAmount,
+                    .bidDate = bidDate.ToString,
+                    .bidCustomerID = c(custIndex).customerID}
+                b.Add(d)
+                success = d.Save()
+            End If
         Else
             MsgBox("Please enter a higher bid")
         End If
-    End Sub
+        If success = True Then
+            ToolStripStatusLabel1.Text = "Bid saved successfully"
+        End If
+        SetDataSource()
 
+        cmbSelectCustomer.SelectedIndex = 0
+        txtAmount.Text = ""
+        DateTimePicker1.Value = Now
+    End Sub
 End Class
