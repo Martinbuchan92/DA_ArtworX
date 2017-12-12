@@ -34,8 +34,8 @@ Public Class FormProcessBid
         Me.txtName.Text = i.Item(itemIndex).name
         Me.txtDescription.Text = i.Item(itemIndex).description
         Me.txtArtist.Text = i.Item(itemIndex).artist
-        Me.txtStartPrice.Text = i.Item(itemIndex).startPrice.ToString
-        Me.txtSoldPrice.Text = i.Item(itemIndex).soldPrice.ToString
+        Me.txtStartPrice.Text = i.Item(itemIndex).startPrice
+        Me.txtSoldPrice.Text = i.Item(itemIndex).soldPrice
         Me.txtSoldTo.Text = i.Item(itemIndex).soldToID
 
         For Each category In a
@@ -60,7 +60,7 @@ Public Class FormProcessBid
         Dim bl As New List(Of Bid)
 
         DisplayListData()
-        lblHighestBid.Text = Format(Item.Bidhighestforitem(i.Item(itemIndex).itemID), "c")
+        lblHighestBid.Text = Bid.Bidhighestforitem(i.Item(itemIndex).itemID)
 
         For Each bid In b
             If bid.itemID = i.Item(itemIndex).itemID Then
@@ -72,8 +72,8 @@ Public Class FormProcessBid
 
     Private Sub btnAcceptBid_Click(sender As Object, e As EventArgs) Handles btnAcceptBid.Click
         Dim bidAmount As Decimal = Decimal.Parse(txtAmount.Text)
-        Dim bidDate As Date = System.DateTime.Today
-        Dim Highest As Decimal = Item.Bidhighestforitem(i.Item(itemIndex).itemID)
+        Dim bidDate As String = System.DateTime.Today
+        Dim Highest As Decimal = ArtworxBOC.Bid.Bidhighestforitem(i(itemIndex).itemID)
         Dim success As Boolean
 
         If bidAmount >= 1000000 Then
@@ -82,7 +82,7 @@ Public Class FormProcessBid
                     .itemID = i(itemIndex).itemID,
                     .pickup = False,
                     .bidPrice = bidAmount,
-                    .bidDate = bidDate,
+                    .bidDate = bidDate.ToString,
                     .bidCustomerID = c(custIndex).customerID}
                 b.Add(d)
                 success = d.Save()

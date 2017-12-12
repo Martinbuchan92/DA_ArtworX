@@ -20,7 +20,7 @@ Public Class FormSellItem
 
     Private Sub CmbItem_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbItem.SelectedIndexChanged
         itemID = i.Item(CmbItem.SelectedIndex).itemID
-        highestBid = Format(Item.Bidhighestforitem(itemID), "c")
+        highestBid = Bid.Bidhighestforitem(itemID)
         customerID = Bid.CustIDForHighestBid(itemID)
 
         Me.TxtHighestBid.Text = highestBid
@@ -34,9 +34,7 @@ Public Class FormSellItem
 
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
         Dim success As Boolean
-        success = Item.setWinningBid(itemID, 0, "0")
-        If Not success Then
-            MsgBox("Save to database failed, please try again")
-        End If
+        success = Bid.setWinningBid(itemID, 0, 0)
+        MsgBox(success.ToString)
     End Sub
 End Class

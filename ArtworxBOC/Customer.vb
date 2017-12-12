@@ -31,41 +31,40 @@
 
 #Region "Constructors"
     Public Sub New()
-        EntityState = EntityStateEnum.Added
+
+    End Sub
+
+    Public Sub New(ByVal customerID As String)
+
     End Sub
 #End Region
 
 #Region "Class Factory Methods"
     Public Shared Function Create(ByRef dt As DataTable) As DataTable
-        Try
-            Return ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_CustomerList)
-        Catch
-        End Try
+        Return ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_CustomerList)
     End Function
 
     Public Shared Function Create(ByVal customerID As String) As Customer
         Dim c As Customer
         Dim dt As DataTable
-        Try
-            dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_CustomerGetByID, ArtworxDAC.DAC.Parameter(CN_customerID, customerID))
-            c = New Customer()
-            With dt.Rows(0)
-                c.customerID = .Item(CN_customerID)
-                c.userName = .Item(CN_userName)
-                c.password = .Item(CN_password)
-                c.firstName = .Item(CN_firstName)
-                c.lastName = .Item(CN_lastName)
-                c.email = .Item(CN_email)
-                c.phone = .Item(CN_phone)
-                c.address = .Item(CN_address)
-                c.creditStatus = .Item(CN_creditStatus)
-                c.accountNumber = .Item(CN_accountNumber)
-                c._accountName = .Item(CN_accountName)
-                c.swiftCode = .Item(CN_swiftCode)
-            End With
-            c.DataStateChanged(EntityStateEnum.UnChanged)
-        Catch
-        End Try
+
+        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_CustomerGetByID, ArtworxDAC.DAC.Parameter(CN_customerID, customerID))
+        c = New Customer()
+        With dt.Rows(0)
+            c.customerID = .Item(CN_customerID.ToString)
+            c.userName = .Item(CN_userName.ToString)
+            c.password = .Item(CN_password.ToString)
+            c.firstName = .Item(CN_firstName.ToString)
+            c.lastName = .Item(CN_lastName.ToString)
+            c.email = .Item(CN_email.ToString)
+            c.phone = .Item(CN_phone.ToString)
+            c.address = .Item(CN_address.ToString)
+            c.creditStatus = .Item(CN_creditStatus.ToString)
+            c.accountNumber = .Item(CN_accountNumber.ToString)
+            c._accountName = .Item(CN_accountName.ToString)
+            c.swiftCode = .Item(CN_swiftCode.ToString)
+        End With
+        c.DataStateChanged(EntityStateEnum.UnChanged)
         Return c
     End Function
 
@@ -74,56 +73,53 @@
         Dim dt As New DataTable
         Dim c As Customer
         Dim i As Integer
-        Try
-            dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_CustomerList)
-            cl = New List(Of Customer)
-            For i = 0 To dt.Rows.Count - 1
-                c = New Customer()
-                With dt.Rows(i)
-                    c.customerID = .Item(CN_customerID)
-                    c.userName = .Item(CN_userName)
-                    c.password = .Item(CN_password)
-                    c.firstName = .Item(CN_firstName)
-                    c.lastName = .Item(CN_lastName)
-                    c.email = .Item(CN_email)
-                    c.phone = .Item(CN_phone)
-                    c.address = .Item(CN_address)
-                    c.creditStatus = .Item(CN_creditStatus)
-                    c.accountNumber = .Item(CN_accountNumber)
-                    c._accountName = .Item(CN_accountName)
-                    c.swiftCode = .Item(CN_swiftCode)
-                End With
-                cl.Add(c)
-            Next
-        Catch
-        End Try
+
+        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_CustomerList)
+        cl = New List(Of Customer)
+        For i = 0 To dt.Rows.Count - 1
+            c = New Customer()
+            With dt.Rows(i)
+                c.customerID = .Item(CN_customerID.ToString)
+                c.userName = .Item(CN_userName.ToString)
+                c.password = .Item(CN_password.ToString)
+                c.firstName = .Item(CN_firstName.ToString)
+                c.lastName = .Item(CN_lastName.ToString)
+                c.email = .Item(CN_email.ToString)
+                c.phone = .Item(CN_phone.ToString)
+                c.address = .Item(CN_address.ToString)
+                c.creditStatus = .Item(CN_creditStatus.ToString)
+                c.accountNumber = .Item(CN_accountNumber.ToString)
+                c._accountName = .Item(CN_accountName.ToString)
+                c.swiftCode = .Item(CN_swiftCode.ToString)
+            End With
+            cl.Add(c)
+        Next
         Return cl
     End Function
 
-    'Not used in this implementation
-    'Public Function Save() As Boolean
-    '    Dim success As Boolean = False
-    '    Dim dt As DataTable
-    '    dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_CustomerSave,
-    '        ArtworxDAC.DAC.Parameter(CN_customerID, customerID),
-    '        ArtworxDAC.DAC.Parameter(CN_userName, userName),
-    '        ArtworxDAC.DAC.Parameter(CN_password, password),
-    '        ArtworxDAC.DAC.Parameter(CN_firstName, firstName),
-    '        ArtworxDAC.DAC.Parameter(CN_lastName, lastName),
-    '        ArtworxDAC.DAC.Parameter(CN_email, email),
-    '        ArtworxDAC.DAC.Parameter(CN_phone, phone),
-    '        ArtworxDAC.DAC.Parameter(CN_address, address),
-    '        ArtworxDAC.DAC.Parameter(CN_creditStatus, creditStatus),
-    '        ArtworxDAC.DAC.Parameter(CN_accountNumber, accountNumber),
-    '        ArtworxDAC.DAC.Parameter(CN_accountName, accountName),
-    '        ArtworxDAC.DAC.Parameter(CN_swiftCode, swiftCode))
-    '    If EntityState = EntityStateEnum.Added Then
-    '        customerID = CType(dt.Rows(0).Item(CN_customerID), String)
-    '    End If
-    '    Me.DataStateChanged(EntityStateEnum.UnChanged)
-    '    success = True
-    '    Return success
-    'End Function
+    Public Function Save() As Boolean
+        Dim success As Boolean = False
+        Dim dt As DataTable
+        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_CustomerSave,
+            ArtworxDAC.DAC.Parameter(CN_customerID, customerID),
+            ArtworxDAC.DAC.Parameter(CN_userName, userName),
+            ArtworxDAC.DAC.Parameter(CN_password, password),
+            ArtworxDAC.DAC.Parameter(CN_firstName, firstName),
+            ArtworxDAC.DAC.Parameter(CN_lastName, lastName),
+            ArtworxDAC.DAC.Parameter(CN_email, email),
+            ArtworxDAC.DAC.Parameter(CN_phone, phone),
+            ArtworxDAC.DAC.Parameter(CN_address, address),
+            ArtworxDAC.DAC.Parameter(CN_creditStatus, creditStatus),
+            ArtworxDAC.DAC.Parameter(CN_accountNumber, accountNumber),
+            ArtworxDAC.DAC.Parameter(CN_accountName, accountName),
+            ArtworxDAC.DAC.Parameter(CN_swiftCode, swiftCode))
+        If EntityState = EntityStateEnum.Added Then
+            customerID = CType(dt.Rows(0).Item(CN_customerID), String)
+        End If
+        Me.DataStateChanged(EntityStateEnum.UnChanged)
+        success = True
+        Return success
+    End Function
 #End Region
 
 #Region "Property Procedures"

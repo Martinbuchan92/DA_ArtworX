@@ -25,6 +25,8 @@ Partial Class FormArtworxParent
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CustomersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewCustomersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewCustomersToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -42,12 +44,25 @@ Partial Class FormArtworxParent
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomersToolStripMenuItem, Me.ItemsToolStripMenuItem, Me.AuctionToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.CustomersToolStripMenuItem, Me.ItemsToolStripMenuItem, Me.AuctionToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(632, 24)
+        Me.MenuStrip.Size = New System.Drawing.Size(1216, 24)
         Me.MenuStrip.TabIndex = 5
         Me.MenuStrip.Text = "MenuStrip"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'CloseToolStripMenuItem
+        '
+        Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
+        Me.CloseToolStripMenuItem.Text = "Close"
         '
         'CustomersToolStripMenuItem
         '
@@ -103,9 +118,9 @@ Partial Class FormArtworxParent
         'StatusStrip
         '
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 431)
+        Me.StatusStrip.Location = New System.Drawing.Point(0, 605)
         Me.StatusStrip.Name = "StatusStrip"
-        Me.StatusStrip.Size = New System.Drawing.Size(632, 22)
+        Me.StatusStrip.Size = New System.Drawing.Size(1216, 22)
         Me.StatusStrip.TabIndex = 7
         Me.StatusStrip.Text = "StatusStrip"
         '
@@ -119,12 +134,13 @@ Partial Class FormArtworxParent
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(632, 453)
+        Me.ClientSize = New System.Drawing.Size(1216, 627)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "FormArtworxParent"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Artworx Auctions"
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
@@ -146,4 +162,6 @@ Partial Class FormArtworxParent
     Friend WithEvents BidProcessingToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AuctionQueriesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ViewCustomersToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
 End Class

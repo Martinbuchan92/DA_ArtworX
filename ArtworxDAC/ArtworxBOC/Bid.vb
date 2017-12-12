@@ -80,13 +80,36 @@ Public Class Bid
 
         For Each bid In b
             If itemID = bid.itemID Then
-                If bid.bidPrice = Item.Bidhighestforitem(itemID) Then
+                If bid.bidPrice = Bidhighestforitem(itemID) Then
                     customerID = bid.bidCustomerID
                 End If
             End If
         Next
 
         Return customerID
+    End Function
+
+    Public Shared Function Bidhighestforitem(ByVal itemID As Integer) As String
+        Dim dt As New DataTable
+        Dim hb As Decimal
+
+        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_BidHighestForItem, ArtworxDAC.DAC.Parameter("highestBid", 0), ArtworxDAC.DAC.Parameter("item_ID", itemID))
+        If Not (dt Is Nothing) Then
+            With dt.Rows(0)
+                If .Item(0) IsNot DBNull.Value Then
+                    hb = .Item(0)
+                End If
+            End With
+        End If
+        Return Format(hb, "c")
+    End Function
+
+    Public Shared Function setWinningBid(ByVal itemID As Integer, ByVal highestBid As Decimal, ByVal customerID As String) As Boolean
+        Dim dt As New DataTable
+        Dim success As Boolean = False
+        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_SetWinningBidForItem, ArtworxDAC.DAC.Parameter("HighestBid", highestBid), ArtworxDAC.DAC.Parameter("item_ID", itemID), ArtworxDAC.DAC.Parameter("Winning_Customer", 0))
+        success = True
+        Return success
     End Function
 
     Public Function Save() As Boolean

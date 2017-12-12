@@ -20,49 +20,44 @@
     Private Const CN_startPrice As String = "startPrice"
     Private Const CN_soldPrice As String = "soldPrice"
     Private Const CN_soldToID As String = "soldToID"
+
     Private Const CN_highestBid As String = "HighestBid"
     Private Const CN_spItemID As String = "Item_ID"
-    Private Const CN_WinningCust As String = "Winning_Customer"
 
 #End Region
 
 #Region "Constructors"
     Public Sub New()
-        EntityState = EntityStateEnum.Added
+
+    End Sub
+
+    Public Sub New(ByVal itemID As Integer)
+
     End Sub
 #End Region
 
 #Region "Class Factory Methods"
     Public Shared Function Create(ByRef dt As DataTable) As DataTable
-        Try
-            Return ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_ItemList)
-        Catch
-        End Try
+        Return ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_ItemList)
     End Function
 
     Public Shared Function Create(ByVal itemID As String) As Item
         Dim i As Item
         Dim dt As DataTable
-        Try
-            dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_ItemGetByID, ArtworxDAC.DAC.Parameter(CN_itemID, itemID))
-            i = New Item()
-            With dt.Rows(0)
-                i.itemID = .Item(CN_itemID)
-                i.categoryID = .Item(CN_categoryID)
-                i.name = .Item(CN_name)
-                i.description = .Item(CN_description)
-                i.artist = .Item(CN_artist)
-                i.startPrice = .Item(CN_startPrice)
-                If .Item(CN_soldPrice) IsNot DBNull.Value Then
-                    i.soldPrice = CType(.Item(CN_soldPrice), Decimal)
-                End If
-                If .Item(CN_soldToID) IsNot DBNull.Value Then
-                    i.soldToID = .Item(CN_soldToID)
-                End If
-            End With
-            i.DataStateChanged(EntityStateEnum.UnChanged)
-        Catch
-        End Try
+
+        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_ItemGetByID, ArtworxDAC.DAC.Parameter(CN_itemID, itemID))
+        i = New Item()
+        With dt.Rows(0)
+            i.itemID = .Item(CN_itemID.ToString)
+            i.categoryID = .Item(CN_categoryID.ToString)
+            i.name = .Item(CN_name.ToString)
+            i.description = .Item(CN_description.ToString)
+            i.artist = .Item(CN_artist.ToString)
+            i.startPrice = .Item(CN_startPrice.ToString)
+            i.soldPrice = .Item(CN_soldPrice.ToString)
+            i.soldToID = .Item(CN_soldToID.ToString)
+        End With
+        i.DataStateChanged(EntityStateEnum.UnChanged)
         Return i
     End Function
 
@@ -71,29 +66,28 @@
         Dim dt As New DataTable
         Dim i As Item
         Dim n As Integer
-        Try
-            dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_ItemList)
-            il = New List(Of Item)
-            For n = 0 To dt.Rows.Count - 1
-                i = New Item()
-                With dt.Rows(n)
-                    i.itemID = .Item(CN_itemID)
-                    i.categoryID = .Item(CN_categoryID)
-                    i.name = .Item(CN_name)
-                    i.description = .Item(CN_description)
-                    i.artist = .Item(CN_artist)
-                    i.startPrice = .Item(CN_startPrice)
-                    If .Item(CN_soldPrice) IsNot DBNull.Value Then
-                        i.soldPrice = CType(.Item(CN_soldPrice), Decimal)
-                    End If
-                    If .Item(CN_soldToID) IsNot DBNull.Value Then
-                        i.soldToID = .Item(CN_soldToID)
-                    End If
-                End With
-                il.Add(i)
-            Next
-        Catch
-        End Try
+
+        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_ItemList)
+        il = New List(Of Item)
+        For n = 0 To dt.Rows.Count - 1
+            i = New Item()
+            With dt.Rows(n)
+                i.itemID = .Item(CN_itemID.ToString)
+                i.categoryID = .Item(CN_categoryID.ToString)
+                i.name = .Item(CN_name.ToString)
+                i.description = .Item(CN_description.ToString)
+                i.artist = .Item(CN_artist.ToString)
+                i.startPrice = .Item(CN_startPrice.ToString)
+                If .Item(CN_soldPrice) IsNot DBNull.Value Then
+                    i.soldPrice = CType(.Item(CN_soldPrice), Decimal)
+                End If
+                If .Item(CN_soldToID) IsNot DBNull.Value Then
+                    i.soldToID = .Item(CN_soldToID.ToString)
+                End If
+
+            End With
+            il.Add(i)
+        Next
         Return il
     End Function
 
@@ -132,27 +126,29 @@
         Return rl
     End Function
 
-    Public Shared Function Bidhighestforitem(ByVal itemID As Integer) As Decimal
-        Dim dt As New DataTable
-        Dim hb As Decimal
+    Public Shared Function gethighestBid(ByVal selectedItem As Integer) As Integer
+        Dim highestBid As Decimal
+        Dim b As List(Of Bid) = ArtworxBOC.Bid.Create()
+        Dim i As List(Of Item) = ArtworxBOC.Item.Create()
+        Dim bidID As Integer
 
-        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_BidHighestForItem, ArtworxDAC.DAC.Parameter(CN_highestBid, 0), ArtworxDAC.DAC.Parameter(CN_spItemID, itemID))
-        If Not (dt Is Nothing) Then
-            With dt.Rows(0)
-                If .Item(0) IsNot DBNull.Value Then
-                    hb = .Item(0)
+        'Dim dt As DataTable
+        'dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_BidHighestForItem,
+        '    ArtworxDAC.DAC.Parameter(CN_highestBid, highestBid),
+        '    ArtworxDAC.DAC.Parameter(CN_spItemID, itemID))
+        'highestBid = CType(dt.Rows(0).Item(0), Integer)
+
+        For Each bid In b
+            For Each item In i
+                If bid.itemID = item.itemID Then
+                    If bid.bidPrice > highestBid Then
+                        bidID = bid.bidID
+                    End If
                 End If
-            End With
-        End If
-        Return hb
-    End Function
+            Next
+        Next
 
-    Public Shared Function setWinningBid(ByVal itemID As Integer, ByVal highestBid As Decimal, ByVal customerID As String) As Boolean
-        Dim dt As New DataTable
-        Dim success As Boolean = False
-        dt = ArtworxDAC.DAC.ExecuteDataTable(My.Settings.SP_SetWinningBidForItem, ArtworxDAC.DAC.Parameter(CN_highestBid, highestBid), ArtworxDAC.DAC.Parameter(CN_spItemID, itemID), ArtworxDAC.DAC.Parameter(CN_WinningCust, 0))
-        success = True
-        Return success
+        Return bidID
     End Function
 #End Region
 
@@ -223,7 +219,7 @@
 
     Public Property startPrice() As Decimal
         Get
-            If _startPrice.HasValue And _startPrice >= 100000.0 Then
+            If _startPrice.HasValue AND _startPrice >= 1000 then
                 Return Decimal.Round(_startPrice.Value, 2)
             End If
             Return 100000.0
